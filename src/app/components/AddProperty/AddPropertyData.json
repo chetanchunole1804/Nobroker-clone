@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Property Details",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/HomeOutlined.png",
+    "link": "#",
+    "children": [
+      {
+        "label": "Apartment Type*",
+        "children": [
+          {
+            "option1": "Apartment",
+            "option2": "Independent House/Villa",
+            "option3": "Gated Community Villa"
+          }
+        ]
+      },
+      {
+        "label": "Apartment Name*",
+        "children": [
+          {
+            "option1": "Matoshree",
+            "option2": "City vista",
+            "option3": "Imprerium Alpha"
+          }
+        ]
+      },
+      {
+        "label": "BHK Type*",
+        "children": [
+          {
+            "option1": "1 RK",
+            "option2": "1 BHK",
+            "option3": "2 BHK",
+            "option4": "3 BHK",
+            "option5": "4 BHK",
+            "option6": "4+ BHK"
+          }
+        ]
+      },
+      {
+        "label": "Floor*",
+        "children": [
+          {
+            "option1": "Ground",
+            "option2": "1",
+            "option3": "2",
+            "option4": "3",
+            "option5": "4",
+            "option6": "4"
+          }
+        ]
+      },
+      {
+        "label": "Total Floor*",
+        "children": [
+          {
+            "option1": "Ground Only",
+            "option2": "1",
+            "option3": "2",
+            "option4": "3",
+            "option5": "4",
+            "option6": "5"
+          }
+        ]
+      },
+      {
+        "label": "Property Age*",
+        "children": [
+          {
+            "option1": "Less that a year",
+            "option2": "1 to 3 years",
+            "option3": "3 to 5 years",
+            "option4": "5 to 10 years",
+            "option5": "More than 10 year"
+          }
+        ]
+      },
+      {
+        "label": "Facing",
+        "children": [
+          {
+            "option1": "North",
+            "option2": "South",
+            "option3": "East",
+            "option4": "West",
+            "option5": "North-East",
+            "option6": "South-East",
+            "option7": "North-West",
+            "option8": "South-West"
+
+          }
+        ]
+      }
+      
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Locality Details",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/PinDropOutlined.png",
+    "link": "#"
+  },
+  {
+    "id": 3,
+    "name": "Rental Details",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/Business.png",
+    "link": "#"
+  },
+  {
+    "id": 4,
+    "name": "Amenities",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/KitchenOutlined.png",
+    "link": "#"
+  },
+  {
+    "id": 5,
+    "name": "Gallery",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/LinkedCameraOutlined.png",
+    "link": "#"
+  },
+  {
+    "id": 6,
+    "name": "Schedule",
+    "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/DateRangeOutlined.png",
+    "link": "#"
+  }
+]

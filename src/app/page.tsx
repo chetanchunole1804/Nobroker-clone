@@ -1,11 +1,13 @@
 import React from 'react'
 import MainProperty from "./pages/MainProperty/page"
+import AddProperty from "./pages/AddProperty/page"
 
 
 const page = () => {
   return (
     <div>
-      <MainProperty/>
+      {/* <MainProperty/> */}
+      <AddProperty/>
     </div>
   )
 }

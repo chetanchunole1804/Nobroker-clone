@@ -1,131 +1,175 @@
+"use client";
+import UseNoBroker from "@/app/components/MainPageComponents/UseNoBroker";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
+import Img_build from "../../../../public/assets/building.png"
 
-const page = () => {
+const Page = () => {
+  const [activeOption, setActiveOption] = useState("Buy");
+
+  const options = ["Buy", "Rent", "Commercial"];
+
   return (
-    <div className="flex flex-col justify-center w-[100vw] items-center">
-      <div className=" w-[65%] flex flex-col justify-center items-center mt-14 ">
-        <h1 className="text-3xl text-[#787676]">
-          World's Largest NoBrokeerage Property Site
-        </h1>
+    <div className="flex flex-col md:flex-row">
+      {/* Main Content */}
+      <div className="flex-1 ml-0 ">
+        <div className="flex flex-col justify-center items-center p-4">
+          <div className="w-full max-w-4xl flex flex-col justify-center items-center md:mt-14">
+            {/* Header Section */}
+            <div>
+              {/* Visible on Desktop */}
+              <h1 className="text-3xl hidden md:block text-[#787676] text-center">
+                World's Largest No Brokerage Property Site
+              </h1>
 
-        <div className="bg-[#FEF0DA] rounded-sm  p-3 mt-5">
-          <div className="flex justify-center gap-2 items-center ">
-            <Image
-              src="https://assets.nobroker.in/nob-common/HomeInteriorHome.svg"
-              width={30}
-              height={30}
-            />
-            <h1 className="text-sm">Home Interiors </h1>
-            |
-            <Image
-              src="https://assets.nobroker.in/nob-common/HomeInteriorDeliveryHome.svg"
-              width={25}
-              height={25}
-            />
-            <h1 className="text-sm">45-Days Guarantee</h1>
-          </div>
-        </div>
+              {/* Visible on Mobile */}
+              <h2 className="block md:hidden text-base text-[#787676] text-center">
+                100% Owner Properties | Zero Brokerage
+              </h2>
+            </div>
 
-        <div className="search text-xl flex flex-col justify-center w-fit items-center  mt-6">
-          <div className="flex border ">
-            <div className="border px-10 text-lg  text-[#AFAAAA]  py-2">
-              Buy
-            </div>
-            <div className="border px-10 text-lg  text-[#AFAAAA] py-2">
-              Rent
-            </div>
-            <div className="border px-10 text-lg  text-[#AFAAAA] py-2">
-              Commercial
-            </div>
-          </div>
-          <div className="border flex flex-col">
-            <div className=" flex">
-              <select className=" p-4 border ">
-                No brokeerage
-                <option className="text-sm" value="">
-                  pune
-                </option>
-                <option value="">No brokeerage</option>
-              </select>
-              <input
-                className="border p-3 text-lg w-[40vw]"
-                type="text"
-                placeholder="Search upto 3 localities or landmarks"
-              />
-              <div className="bg-red-600 text-white w-fit px-4 flex justify-center items-center ">
-                {" "}
+            {/* Guarantee Section */}
+            <div className="bg-[#FEF0DA] hidden md:block rounded-sm p-3 mt-5">
+              <div className="flex justify-center gap-2 items-center">
                 <Image
-                  src="https://assets.nobroker.in/nb-new/public/Home/searchIcon.svg"
-                  width={20}
-                  height={20}
-                />{" "}
-                Search
+                  src="https://assets.nobroker.in/nob-common/HomeInteriorHome.svg"
+                  width={30}
+                  height={30}
+                  alt="Home Interiors"
+                />
+                <h1 className="text-sm">Home Interiors</h1>
+                <span>|</span>
+                <Image
+                  src="https://assets.nobroker.in/nob-common/HomeInteriorDeliveryHome.svg"
+                  width={25}
+                  height={25}
+                  alt="45-Days Guarantee"
+                />
+                <h1 className="text-sm">45-Days Guarantee</h1>
               </div>
             </div>
 
-            <div className="border flex justify-around items-center gap-2 ">
-              <label className="text-sm" htmlFor="">
-                {" "}
-                <input className="p-2 text-sm" name="radio" type="radio" />
-                &nbsp; Full House
-              </label>
-              <label className="text-sm" htmlFor="">
-                {" "}
-                <input className="p-2 " name="radio" type="radio" />
-                &nbsp; Land/Plot
-              </label>
-              <div className="">
-                <div className=" flex gap-2 p-3">
-                  <select
-                    className="pr-28 py-2 border text-sm "
-                    name="BHK Type"
-                    id=""
+            {/* Search Section */}
+            <div className="search text-xl flex flex-col justify-center w-full items-center mt-6">
+              <div className="flex md:border">
+                {options.map((item) => (
+                  <div
+                    key={item}
+                    className={`relative md:border px-10 md:px-10 text-base md:text-lg py-2 cursor-pointer ${
+                      activeOption === item
+                        ? "text-[#FD3752] font-bold"
+                        : "text-[#AFAAAA]"
+                    }`}
+                    onClick={() => setActiveOption(item)}
                   >
-                    <option className="bg-[#AFAAAA]" value="">
-                      BHk type
+                    {item}
+                    {/* Custom Red Line for Active Option */}
+                    {activeOption === item && (
+                      <div className="absolute bottom-0 left-0 w-full h-1 bg-[#FD3752]"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="border rounded-xl md:rounded-sm flex w-full  flex-col mt-4 md:mt-0">
+                {/* Search Bar */}
+                <div className="flex px-2 md:p-0 md:flex-row ">
+                  <select className="p-2 text-sm hidden md:block w-[15%] border">
+                    <option className="text-xs" value="">
+                      No brokerage
                     </option>
-                    <option value="">BHk TYPe</option>
+                    <option value="pune">Pune</option>
                   </select>
-                  <select
-                    className="pr-28 py-2 border text-sm "
-                    name="BHK Type "
-                    id=""
-                  >
-                    <option className="bg-[#AFAAAA]" value="">
-                      BHk type
-                    </option>
-                    <option value="">BHk TYPe</option>
-                  </select>
-                  <div className="flex gap-2 items-center border px-3 py-2">
-                    <input type="checkbox" id="myCheckbox" />
-                    <label className="text-sm" for="myCheckbox">
-                      New Builder Projects
+                  <input
+                    className="md:border p-2 text-sm md:text-lg w-full  md:w-[70%] mt-2 md:mt-0"
+                    type="text"
+                    placeholder="Search up to 3 localities or landmarks"
+                  />
+                  <button className="bg-[#FD3752] rounded-xl md:rounded-none w-[15%] text-white  px-4 flex justify-center items-center mt-2 md:mt-0">
+                    <Image
+                      src="https://assets.nobroker.in/nb-new/public/Home/searchIcon.svg"
+                      width={20}
+                      height={20}
+                      alt="Search"
+                      className=""
+                    />
+                    <span className="hidden md:inline ml-2">Search</span>
+                  </button>
+                </div>
+
+                {/* Filters */}
+                <div className="border bg-[#F8F8F8] md:bg-white rounded-lg md:rounded-none  flex flex-wrap justify-around items-center gap-2 mt-3 md:mt-0">
+                  <div className="flex justify-between block md:hidden items-center  w-full  p-2">
+                    <div className=" flex gap-2">
+                      <Image src="" width={20} height={20} alt="" />
+                      <div className="">
+                        <h2 className="text-xs">Continue Last Search</h2>
+                        <h1 className="text-sm">Kharadi,Pune</h1>
+                      </div>
+                    </div>
+                    <div className="w-2 h-2">
+                      <Image width={20} height={20} src="" alt="" />
+                    </div>
+                  </div>
+
+<div className="flex gap-2 w-[30%]">
+                  {["Full House", "Land/Plot"].map((item) => (
+                    <label className="text-sm md:flex hidden " key={item}>
+                      <input
+                        className="p-2 hidden md:block text-sm"
+                        name="radio"
+                        type="radio"
+                      />
+                      &nbsp; {item}
                     </label>
+                  ))}
+                  </div>
+
+                  <div className="flex w-[65%]  gap-2">
+                    {Array(2)
+                      .fill("BHK Type")
+                      .map((item, idx) => (
+                        <select
+                          key={idx}
+                          className="pr-10 hidden md:block py-2 border text-sm"
+                          name={item}
+                        >
+                          <option
+                            className="bg-[#AFAAAA] hidden md:block"
+                            value=""
+                          >
+                            {item}
+                          </option>
+                        </select>
+                      ))}
+                    <div className="flex gap-2 hidden md:block items-center border px-3 py-2">
+                      <input type="checkbox" id="newProjects" />
+                      <label className="text-sm" htmlFor="newProjects">
+                        New Builder Projects
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Footer Section */}
+          <div className="mt-12 flex flex-col items-center">
+            <div className="flex justify-center items-center gap-2">
+              <div className="w-20 h-[2px] bg-gray-200"></div>
+              <h1>Are you a Property Owner?</h1>
+              <div className="w-20 h-[2px] bg-gray-200"></div>
+            </div>
+            <button className="text-white text-center w-fit text-base py-2 rounded-sm mt-4 bg-[#007A6F] px-5">
+              Post Free Property Ad
+            </button>
+          </div>
         </div>
+        <UseNoBroker/>
       </div>
 
-      <div className="mt-12 flex justify-center flex-col items-center">
-        <div className="flex justify-center items-center gap-2 ">
-          
-          <div className="w-20 h-[2px] bg-gray-200"></div>
-
-
-          <h1>Are you a Property Owner?</h1>
-        
-        <div className="w-20 h-[2px] bg-gray-200"></div>
-        </div>
-        <div className="text-white text-center w-fit text-base py-2 rounded-sm mt-4 bg-[#007A6F] px-5 ">
-          Post Free Property Ad
-        </div>
-      </div>
     </div>
   );
 };
 
-export default page;
+export default Page;

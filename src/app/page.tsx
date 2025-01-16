@@ -6,8 +6,8 @@ import AddProperty from "./pages/AddProperty/page"
 const page = () => {
   return (
     <div>
-      {/* <MainProperty/> */}
-      <AddProperty/>
+      <MainProperty/>
+      {/* <AddProperty/> */}
     </div>
   )
 }

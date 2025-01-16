@@ -1,5 +1,5 @@
-import Building from "../../../../public/assets/building.png";
-import Handlogo from "../../../../public/assets/handlogo.png";
+import Building from "../../../../public/assets/building.png"
+import Handlogoo from "../../../../public/assets/handlogoo.png";
 import Home_iner from "../../../../public/assets/Home_Interiors.svg";
 import NoBroker from "../../../../public/assets/NoBroker_for_NRIs.png";
 import Legal from "../../../../public/assets/Property_Legal_Services.png";
@@ -11,7 +11,7 @@ const services = [
     name: "Building",
   },
   {
-    img: Handlogo,
+    img: Handlogoo,
     name: "Hand Logo",
   },
   {

@@ -3,31 +3,24 @@
     "id": 1,
     "name": "Property Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/HomeOutlined.png",
-    "link": "#",
-    "children": [
+    "link": "#propertyDetails",
+    "key": "PropertyDetails",
+    "PropertyData": [
       {
         "label": "Apartment Type*",
-        "children": [
+        "TypeOption": [
           {
+            "id":1.1,
             "option1": "Apartment",
             "option2": "Independent House/Villa",
             "option3": "Gated Community Villa"
           }
         ]
       },
-      {
-        "label": "Apartment Name*",
-        "children": [
-          {
-            "option1": "Matoshree",
-            "option2": "City vista",
-            "option3": "Imprerium Alpha"
-          }
-        ]
-      },
+      
       {
         "label": "BHK Type*",
-        "children": [
+        "FlatTypeOption": [
           {
             "option1": "1 RK",
             "option2": "1 BHK",
@@ -40,7 +33,7 @@
       },
       {
         "label": "Floor*",
-        "children": [
+        "FloorOption": [
           {
             "option1": "Ground",
             "option2": "1",
@@ -52,8 +45,18 @@
         ]
       },
       {
+        "label": "Apartment Name*",
+        "NameOption": [
+          {
+            "option1": "Matoshree",
+            "option2": "City vista",
+            "option3": "Imprerium Alpha"
+          }
+        ]
+      },
+      {
         "label": "Total Floor*",
-        "children": [
+        "TotalFloorOption": [
           {
             "option1": "Ground Only",
             "option2": "1",
@@ -64,9 +67,10 @@
           }
         ]
       },
+      
       {
         "label": "Property Age*",
-        "children": [
+        "PropertyAge": [
           {
             "option1": "Less that a year",
             "option2": "1 to 3 years",
@@ -78,7 +82,7 @@
       },
       {
         "label": "Facing",
-        "children": [
+        "FacingOption": [
           {
             "option1": "North",
             "option2": "South",
@@ -88,41 +92,94 @@
             "option6": "South-East",
             "option7": "North-West",
             "option8": "South-West"
-
           }
         ]
       }
-      
     ]
   },
   {
     "id": 2,
     "name": "Locality Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/PinDropOutlined.png",
-    "link": "#"
+    "link": "#localityDetails",
+    "key": "LocalityDetails",
+    "localityData": [
+      {
+        "label": "City*",
+        "cities": [
+          {
+            "option1": "Pune",
+            "option2": "Mumbai",
+            "option3": "Nagpur",
+            "option4": "Banglore",
+            "option5": "Hydrabad",
+            "option6": "Gurgaon ",
+            "option7": "Delhi",
+            "option8": "Gaziyabad",
+            "option9": "Noida"
+          }
+        ]
+      },
+      {
+        "Label":"Locality*"
+      },
+      {
+        "Label":"Landmark / Street*"
+      }
+    ]
   },
   {
     "id": 3,
     "name": "Rental Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/Business.png",
-    "link": "#"
+    "link": "#rentalDetails",
+    "key": "RentalDetails",
+    "children":[
+        {
+            "label":"Property available for"
+        },
+        {
+            "label":"Expected Rent*"
+        },
+        {
+            "label":"Expected Deposit*"
+        },
+        {
+            "label":"Monthly Maintenance",
+            "children":[
+                {
+                    "option1":"maintenance Included",
+                    "option2":"maintenance Extra"
+                }
+            ]
+        },
+        {
+            "Label":"Available From*"
+        },
+        {
+            "label":"Preferred Tenants*"
+        }
+    ]
   },
   {
     "id": 4,
     "name": "Amenities",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/KitchenOutlined.png",
-    "link": "#"
+    "link": "#amenities",
+    "key": "Amenities"
   },
   {
     "id": 5,
     "name": "Gallery",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/LinkedCameraOutlined.png",
-    "link": "#"
+    "link": "#gallery",
+    "key": "Gallery"
   },
   {
     "id": 6,
     "name": "Schedule",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/DateRangeOutlined.png",
-    "link": "#"
+    "link": "#schedule",
+    "key": "Schedule"
   }
 ]

@@ -1,6 +1,6 @@
 import React from 'react'
 import MainProperty from "./pages/MainProperty/page"
-import AddProperty from "./pages/AddProperty/page"
+import AddProperty from "./AddProperty/page"
 
 
 const page = () => {

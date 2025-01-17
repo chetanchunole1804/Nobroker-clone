@@ -1,12 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import Handlog from "../../../../public/assets/handlogo.png"
-import services from "@/app/components/MainPageComponents/Data";
+import {services} from "@/app/components/MainPageComponents/Data"
 
 const UseNoBroker = () => {
   return (
     <div>
-      {/* Section with Hand Logo */}
+    
       <div className="w-full justify-center items-center p-3 bg-[#384D6C]">
         <div className="flex justify-center items-center gap-2">
           <Image src={Handlog} width={30} height={30} alt="Hand Logo" />
@@ -28,8 +28,8 @@ const UseNoBroker = () => {
           >
             <Image
               src={service.img}
-              width={50}
-              height={50}
+              width={60}
+              height={60}
               alt={service.name}
               className="mb-2"
             />

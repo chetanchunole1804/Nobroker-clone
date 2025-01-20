@@ -4,7 +4,7 @@ import { rentServices } from "@/app/components/MainPageComponents/Data";
 
 const RentServices = () => {
   return (
-    <div>
+    <div className="md:block hidden">
       {/* Header Section */}
       <div className="w-full justify-center items-center p-4 bg-[#384D6C]">
         <div className="flex justify-center items-center gap-2">

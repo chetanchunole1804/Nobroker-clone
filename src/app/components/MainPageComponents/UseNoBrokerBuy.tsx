@@ -5,7 +5,7 @@ import {services} from "@/app/components/MainPageComponents/Data"
 
 const UseNoBroker = () => {
   return (
-    <div>
+    <div className="md:block hidden">
     
       <div className="w-full justify-center items-center p-3 bg-[#384D6C]">
         <div className="flex justify-center items-center gap-2">

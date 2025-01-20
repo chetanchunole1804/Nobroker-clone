@@ -1,6 +1,7 @@
 
 "use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const Nav = () => {
@@ -9,11 +10,15 @@ const Nav = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
+  const router = useRouter()
+
+  const handleClick = ()=>{
+    router.push("/AddProperty")
+  }
 
   return (
     <div>
-      {/* Navigation Bar */}
-      <div className="w-full flex md:justify-between items-center gap-2 px-5 py-3 nav_box_shadow flex-wrap">
+      <div className="w-full flex md:justify-between bg-white shadow-md  z-30 fixed items-center gap-2 px-5 py-3 nav_box_shadow flex-wrap">
       <div
           className="flex md:hidden gap-2 justify-center items-center cursor-pointer"
           onClick={toggleSidebar}
@@ -38,7 +43,7 @@ const Nav = () => {
           <div className="border rounded-sm flex justify-center items-center h-8 px-2 text-center hover:bg-gray-100">
             <p>Pay rent</p>
           </div>
-          <div className="rounded-sm text-white bg-[#007A6F] justify-center text-[14px] h-8 items-center flex px-2 hover:bg-[#005f55]">
+          <div onClick={handleClick} className="rounded-sm text-white bg-[#007A6F] justify-center text-[14px] h-8 items-center flex px-2 hover:bg-[#005f55]">
             For Property owners
           </div>
           <div className="flex gap-2 justify-center items-center border-r pr-2">
@@ -51,7 +56,6 @@ const Nav = () => {
             <h1>Log in</h1>
           </div>
         </div>
-        {/* Hamburger Menu */}
         
       </div>
 

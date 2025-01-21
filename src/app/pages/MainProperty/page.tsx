@@ -4,24 +4,26 @@ import Image from "next/image";
 import { useState } from "react";
 import Handlog from "../../../../public/assets/building.png";
 import RentServices from "@/app/components/MainPageComponents/UseNoBrokerRent";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import Link from "next/link";
-import MainPageBottom from "@/app/components/MainPageBottom";
-import Mobile_assets from "../../../../public/assets/mobile_assets.svg"
+import MainPageBottom from "@/app/components/MainPageComponents/MainPageBottom";
+import PostFreeAd from "@/app/components/MainPageComponents/MobilComponentMainPage/PostFreeAd";
+import HomeServices from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServices";
+
 
 
 const Page = () => {
   const [activeOption, setActiveOption] = useState("Buy");
   const options = ["Buy", "Rent", "Commercial"];
 
-  const router = useRouter()
+  // const router = useRouter()
 
   return (
-    <div className="flex flex-col md:flex-row">
+    <div className="flex flex-col md:flex-row ">
       {/* Main Content */}
       <div className="flex-1 ml-0">
         <div className="flex flex-col justify-center items-center p-4">
-          <div className="w-full max-w-4xl flex flex-col justify-center items-center md:mt-14">
+          <div className="w-full max-w-4xl flex flex-col justify-center items-center md:mt-28">
             {/* Header Section */}
             <div>
               {/* Visible on Desktop */}
@@ -58,11 +60,11 @@ const Page = () => {
 
             {/* Search Section */}
             <div className="search text-xl flex flex-col justify-center w-full items-center mt-6">
-              <div className="flex md:border">
+              <div className="flex w-full justify-center md:p-0 md:w-[50%]  ">
                 {options.map((item) => (
                   <div
                     key={item}
-                    className={`relative md:border px-10 md:px-10 text-base md:text-lg py-2 cursor-pointer ${
+                    className={`relative md:border w-[33.33%] flex justify-center  px-10 md:px-10 text-base md:text-lg py-2 cursor-pointer ${
                       activeOption === item
                         ? "text-[#FD3752] font-bold"
                         : "text-[#AFAAAA]"
@@ -86,15 +88,15 @@ const Page = () => {
                     <option value="pune">Pune</option>
                   </select>
                   <input
-                    className="md:border p-2 text-sm md:text-lg w-full  md:w-[70%] mt-2 md:mt-0"
+                    className="md:border p-2 text-md b md:text-lg w-full outline-none  md:w-[70%] mt-2 md:mt-0"
                     type="text"
                     placeholder="Search up to 3 localities or landmarks"
                   />
-                  <button className="bg-[#FD3752] rounded-xl md:rounded-none w-[15%] text-white  px-4 flex justify-center items-center mt-2 md:mt-0">
+                  <button className="bg-[#FD3752] rounded-xl md:rounded-none w-[18%] text-white  px-4 flex justify-center items-center mt-2 md:mt-0">
                     <Image
                       src="https://assets.nobroker.in/nb-new/public/Home/searchIcon.svg"
-                      width={20}
-                      height={20}
+                      width={30}
+                      height={30}
                       alt="Search"
                       className=""
                     />
@@ -159,7 +161,7 @@ const Page = () => {
           </div>
 
        
-          <div className="mt-12  hidden md:block flex flex-col items-center">
+          <div className="mt-12 hidden  md:flex flex-col items-center">
             <div className="flex justify-center items-center gap-2">
               <div className="w-20 h-[2px] bg-gray-200"></div>
               <h1>Are you a Property Owner?</h1>
@@ -170,22 +172,19 @@ const Page = () => {
               Post Free Property Ad
             </button>
             </Link>
+            
+             
           </div>
 
-<div className="w-full rounded-xl bg-[#4F3B2D] flex justify-between p-4 mt text-white  ">
-  <div className="">
-   <h1 className=" font-semibold">Looking for Tenats/ Buyers ?</h1>
-   <h3 className="text-sm">🗲 Faster & Verified Tenants/Buyers</h3>
-   <h3 className="text-sm">🗲 Pay Zero brokerage</h3>
-   <div className="px-3 py-2 mt-3 rounded-lg text-white font-semibold w-fit bg-[#FD3752]">Post FREE Property Ad</div>
-  </div>
-  <div className="w-[50px] overflow-hidden  object-cover">
-  <Image src={Mobile_assets} className=" " alt="" />
-  </div>
-</div>
+          <PostFreeAd/>
+
 
 
         </div>
+
+
+        {activeOption === "Rent" && <HomeServices />}
+        {(activeOption === "Buy" || activeOption === "Commercial") && <HomeServices />}
 
       
         {activeOption === "Rent" && <RentServices />}

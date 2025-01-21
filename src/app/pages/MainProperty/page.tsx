@@ -182,7 +182,6 @@ const Page = () => {
 
         </div>
 
-        <HomeServices/>
 
         {activeOption === "Rent" && <HomeServices />}
         {(activeOption === "Buy" || activeOption === "Commercial") && <HomeServices />}

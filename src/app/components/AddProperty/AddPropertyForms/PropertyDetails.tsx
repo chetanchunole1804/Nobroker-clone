@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import propertyData from "../AddPropertyData.json";
+import HelpInterest from '../HelpInterest'
+import SaveContinueButton from "../SaveContinueButton";
 
 interface Option {
   [key: string]: string | number;
@@ -19,7 +21,8 @@ interface PropertyDetailsData {
 }
 
 const PropertyDetails: React.FC = () => {
-  // Find the data with id: 1
+
+  const [formData, setFormData] = useState<{ [key: string]: string }>({});  // Find the data with id: 1
   const propertyDetailsData = (propertyData as PropertyDetailsData[]).find(
     (item) => item.id === 1
   )?.PropertyData;
@@ -29,19 +32,36 @@ const PropertyDetails: React.FC = () => {
   }
 
   const [leftFields, setLeftFields] = useState<PropertyField[]>(
-    propertyDetailsData.slice(0, 4)
+    propertyDetailsData.slice(0, 3)
+
+    
+
   );
   const [rightFields, setRightFields] = useState<PropertyField[]>(
     propertyDetailsData.slice(3, 8)
   );
 
+  // console.log(propertyDetailsData[0].TypeOption[0].option4)
+  // console.log(propertyDetailsData[3])
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+    // console.log(formData)
+
+  };
+
   return (
-    <div className="sm:w-[67%] w-[100%] h-screen bg-white px-12 overflow-hidden relative">
+    <div className="sm:w-[67%] w-[100%] h-auto bg-white px-12 overflow-hidden relative">
       <h1 className="text-[#009587] text-lg font-semibold py-4">
         Property Details
       </h1>
       <div className="h-[1px] w-screen bg-gray-200 absolute right-0 mt-[5px]"></div>
 
+      <form action="" className="mb-5">
       <div className="flex justify-between">
         <div className="w-[48%]">
           {leftFields.map((field, index) => (
@@ -49,14 +69,21 @@ const PropertyDetails: React.FC = () => {
               <label className="font-semibold text-[#635b63] mb-1">
                 {field.label}
               </label>
-              <select className="border border-gray-300 w-full py-2 px-2 text-[#837783]">
-                <option value="" disabled selected>Select</option>
+              <select
+                className="border border-gray-300 w-full py-2 px-2 text-[#837783] focus:outline outline-1 "
+                // value={formData}
+                // onChange={handleChange}
+                // name={`leftField_${index}`}
+                // value={formData[`leftField_${index}`] || ""}
+                required
+              >
                 {Object.entries(field)
                   .filter(([key, value]) => Array.isArray(value))
                   .flatMap(([key, optionsArray]) =>
                     (optionsArray as Option[]).flatMap((optionsObj) =>
                       Object.entries(optionsObj).map(([key, option], i) => (
-                        <option key={i} value={option}>
+                        <option key={i} value={option} className="rounded-none" disabled={i === 0} 
+                        selected={i === 0}>
                           {option}
                         </option>
                       ))
@@ -66,10 +93,19 @@ const PropertyDetails: React.FC = () => {
             </div>
           ))}
           <div>
-            <label htmlFor="" className="font-semibold text-[#635b63] mb-1 text-sm ">Built Up Area*</label>
-            <div className="flex justify-between items-center border border-gray-300 w-full py-2 px-2 text-sm">
-            <input type="text"  placeholder="Built Up Area" className="focus:outline-none w-96"/>
-            <span>Sq.ft</span>
+            <label
+              htmlFor=""
+              className="font-semibold text-[#635b63] mb-1 text-sm "
+            >
+              Built Up Area*
+            </label>
+            <div className="flex justify-between items-center border border-gray-300 w-full py-2 px-2 text-sm ">
+              <input
+                type="text"
+                placeholder="Built Up Area"
+                className="focus:outline-none w-96"
+              />
+              <span>Sq.ft</span>
             </div>
           </div>
         </div>
@@ -80,14 +116,20 @@ const PropertyDetails: React.FC = () => {
               <label className="font-semibold text-[#635b63] mb-1">
                 {field.label}
               </label>
-              <select className="border border-gray-300 w-full py-2 px-2 text-[#837783]">
-              <option value="" disabled selected>Select</option>
+              <select className="border border-gray-300 w-full py-2 px-2 text-[#837783] focus:outline outline-1 " 
+              // value={formData}
+              // value={formData[`rightField_${index}`] || ""}
+              // name={`rightField_${index}`}
+                // onChange={handleChange}
+                required
+                >
                 {Object.entries(field)
                   .filter(([key, value]) => Array.isArray(value))
                   .flatMap(([key, optionsArray]) =>
                     (optionsArray as Option[]).flatMap((optionsObj) =>
                       Object.entries(optionsObj).map(([key, option], i) => (
-                        <option key={i} value={option}>
+                        <option key={i} value={option} disabled={i === 0} 
+                        selected={i === 0}>
                           {option}
                         </option>
                       ))
@@ -98,9 +140,11 @@ const PropertyDetails: React.FC = () => {
           ))}
         </div>
       </div>
+      </form>
+        <HelpInterest/>
+        <SaveContinueButton/>
     </div>
   );
 };
 
 export default PropertyDetails;
-

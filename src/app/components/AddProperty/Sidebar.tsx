@@ -1,5 +1,7 @@
 import React from "react";
 import propertyData from "./AddPropertyData.json";
+import { useRouter } from "next/router";
+
 
 interface PropertyItem {
   name: string;
@@ -20,8 +22,12 @@ const propertyDataTyped: PropertyItem[] = propertyData;
 // }
 
 const Sidebar: React.FC<SidebarProps> = ({ changePage, activePage }) => {
+
+
+  // const router = useRouter();
+  // const { show } = router.query;
   return (
-    <aside className="bg-white w-[17%] h-screen sm:block hidden">
+    <aside className="bg-white w-[17%] h-auto sm:block hidden">
       <ul>
         {propertyDataTyped.map((item, index) => (
           <li key={index} className="relative">
@@ -52,3 +58,4 @@ const Sidebar: React.FC<SidebarProps> = ({ changePage, activePage }) => {
 };
 
 export default Sidebar;
+

@@ -12,15 +12,39 @@ const InfoCards: React.FC = () => {
           className="w-24 my-3"
         />
         <p className=" leading-relaxed">No need to visit Government office</p>
-        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587]">Get It Now</button>
+        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587]">
+          Get It Now
+        </button>
       </div>
       <div className="border-[2px] border-gray-100 flex flex-col justify-center text-center p-1 pt-4 mt-3">
         <h4 className="text-[#425d78] text-[17px]">Get Tenants Faster</h4>
-        <p className="mt-5">Subscribe to our owner plans and find Tenants quickly and with ease</p>
-        {/* <img src="https://assets.nobroker.in/nb-new/public/Pyp-Form/privacyLogo.svg" alt="" /> */}
-        <img src="" alt="" />
-        <img src="" alt="" />
-        <button>Learn More</button>
+        <p className="mt-5">
+          Subscribe to our owner plans and find Tenants quickly and with ease
+        </p>
+        <div className="flex flex-col items-center justify-center py-5">
+          <img
+            src="https://assets.nobroker.in/nb-new/public/Pyp-Form/privacyLogo.svg"
+            alt=""
+            className="w-10"
+          />
+          <p className="text-xs text-[#425d78] mb-3">Privacy</p>
+          <img
+            src="https://assets.nobroker.in/nb-new/public/Pyp-Form/promotedListing.svg"
+            alt=""
+          />
+          <p className="text-xs text-[#425d78] mb-3">Promoted Listing</p>
+          <img
+            src="https://assets.nobroker.in/nb-new/public/Pyp-Form/facebookLogo.svg"
+            alt=""
+          />
+          <p className="text-xs text-[#425d78] mb-3">Social Marketing</p>
+          <img
+            src="https://assets.nobroker.in/nb-new/public/Pyp-Form/rentConsultation.svg"
+            alt=""
+          />
+          <p className="text-xs text-[#425d78] mb-3">Price Consultation</p>
+        </div>
+        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587] mb-3">Show Intrest</button>
       </div>
     </div>
   );

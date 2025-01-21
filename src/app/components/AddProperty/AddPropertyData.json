@@ -3,17 +3,17 @@
     "id": 1,
     "name": "Property Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/HomeOutlined.png",
-    "link": "#propertyDetails",
+    "link": "#",
     "key": "PropertyDetails",
     "PropertyData": [
       {
         "label": "Apartment Type*",
         "TypeOption": [
           {
-            "id":1.1,
-            "option1": "Apartment",
-            "option2": "Independent House/Villa",
-            "option3": "Gated Community Villa"
+            "option1": "Select",
+            "option2": "Apartment",
+            "option3": "Independent House/Villa",
+            "option4": "Gated Community Villa"
           }
         ]
       },
@@ -22,12 +22,13 @@
         "label": "BHK Type*",
         "FlatTypeOption": [
           {
-            "option1": "1 RK",
-            "option2": "1 BHK",
-            "option3": "2 BHK",
-            "option4": "3 BHK",
-            "option5": "4 BHK",
-            "option6": "4+ BHK"
+            "option1": "Select",
+            "option2": "1 RK",
+            "option3": "1 BHK",
+            "option4": "2 BHK",
+            "option5": "3 BHK",
+            "option6": "4 BHK",
+            "option7": "4+ BHK"
           }
         ]
       },
@@ -35,12 +36,13 @@
         "label": "Floor*",
         "FloorOption": [
           {
-            "option1": "Ground",
-            "option2": "1",
-            "option3": "2",
-            "option4": "3",
-            "option5": "4",
-            "option6": "4"
+            "option1": "Select",
+            "option2": "Ground",
+            "option3": "1",
+            "option4": "2",
+            "option5": "3",
+            "option6": "4",
+            "option7": "4"
           }
         ]
       },
@@ -48,9 +50,10 @@
         "label": "Apartment Name*",
         "NameOption": [
           {
-            "option1": "Matoshree",
-            "option2": "City vista",
-            "option3": "Imprerium Alpha"
+            "option1": "Select",
+            "option2": "Matoshree",
+            "option3": "City vista",
+            "option4": "Imprerium Alpha"
           }
         ]
       },
@@ -58,12 +61,13 @@
         "label": "Total Floor*",
         "TotalFloorOption": [
           {
-            "option1": "Ground Only",
-            "option2": "1",
-            "option3": "2",
-            "option4": "3",
-            "option5": "4",
-            "option6": "5"
+            "option1": "Select",
+            "option2": "Ground Only",
+            "option3": "1",
+            "option4": "2",
+            "option5": "3",
+            "option6": "4",
+            "option7": "5"
           }
         ]
       },
@@ -72,11 +76,12 @@
         "label": "Property Age*",
         "PropertyAge": [
           {
-            "option1": "Less that a year",
-            "option2": "1 to 3 years",
-            "option3": "3 to 5 years",
-            "option4": "5 to 10 years",
-            "option5": "More than 10 year"
+            "option1": "Select",
+            "option2": "Less that a year",
+            "option3": "1 to 3 years",
+            "option4": "3 to 5 years",
+            "option5": "5 to 10 years",
+            "option6": "More than 10 year"
           }
         ]
       },
@@ -84,14 +89,15 @@
         "label": "Facing",
         "FacingOption": [
           {
-            "option1": "North",
-            "option2": "South",
-            "option3": "East",
-            "option4": "West",
-            "option5": "North-East",
-            "option6": "South-East",
-            "option7": "North-West",
-            "option8": "South-West"
+            "option1": "Select",
+            "option2": "North",
+            "option3": "South",
+            "option4": "East",
+            "option5": "West",
+            "option6": "North-East",
+            "option7": "South-East",
+            "option8": "North-West",
+            "option9": "South-West"
           }
         ]
       }
@@ -101,22 +107,23 @@
     "id": 2,
     "name": "Locality Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/PinDropOutlined.png",
-    "link": "#localityDetails",
+    "link": "#",
     "key": "LocalityDetails",
     "localityData": [
       {
         "label": "City*",
         "cities": [
           {
-            "option1": "Pune",
-            "option2": "Mumbai",
-            "option3": "Nagpur",
-            "option4": "Banglore",
-            "option5": "Hydrabad",
-            "option6": "Gurgaon ",
-            "option7": "Delhi",
-            "option8": "Gaziyabad",
-            "option9": "Noida"
+            "option1": "Select",
+            "option2": "Pune",
+            "option3": "Mumbai",
+            "option4": "Nagpur",
+            "option5": "Banglore",
+            "option6": "Hydrabad",
+            "option7": "Gurgaon ",
+            "option8": "Delhi",
+            "option9": "Gaziyabad",
+            "option10": "Noida"
           }
         ]
       },
@@ -132,7 +139,7 @@
     "id": 3,
     "name": "Rental Details",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/Business.png",
-    "link": "#rentalDetails",
+    "link": "#",
     "key": "RentalDetails",
     "children":[
         {
@@ -165,21 +172,21 @@
     "id": 4,
     "name": "Amenities",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/KitchenOutlined.png",
-    "link": "#amenities",
+    "link": "#",
     "key": "Amenities"
   },
   {
     "id": 5,
     "name": "Gallery",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/LinkedCameraOutlined.png",
-    "link": "#gallery",
+    "link": "#",
     "key": "Gallery"
   },
   {
     "id": 6,
     "name": "Schedule",
     "icon": "https://assets.nobroker.in/nb-new/public/MaterialIcons/DateRangeOutlined.png",
-    "link": "#schedule",
+    "link": "#",
     "key": "Schedule"
   }
 ]

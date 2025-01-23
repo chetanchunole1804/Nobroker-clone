@@ -8,7 +8,9 @@ import RentServices from "@/app/components/MainPageComponents/UseNoBrokerRent";
 import Link from "next/link";
 import MainPageBottom from "@/app/components/MainPageComponents/MainPageBottom";
 import PostFreeAd from "@/app/components/MainPageComponents/MobilComponentMainPage/PostFreeAd";
-import HomeServices from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServices";
+import HomeServices from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesRent";
+import HomeServicesRent from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesRent";
+import HomeServicesBuy from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesBuy";
 
 
 
@@ -183,8 +185,8 @@ const Page = () => {
         </div>
 
 
-        {activeOption === "Rent" && <HomeServices />}
-        {(activeOption === "Buy" || activeOption === "Commercial") && <HomeServices />}
+        {activeOption === "Rent" && <HomeServicesRent />}
+        {(activeOption === "Buy" || activeOption === "Commercial") && <HomeServicesBuy />}
 
       
         {activeOption === "Rent" && <RentServices />}

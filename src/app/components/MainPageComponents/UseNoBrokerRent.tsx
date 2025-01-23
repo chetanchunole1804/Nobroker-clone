@@ -31,6 +31,7 @@ const RentServices = () => {
             <p className="text-sm font-medium text-gray-700">{service.name}</p>
           </div>
         ))}
+        <h2 className="text-[#000000]">3 Lacs + Services booked in last 3 months | 4.5</h2>
       </div>
     </div>
   );

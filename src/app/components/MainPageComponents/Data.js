@@ -35,6 +35,35 @@ import Bathroom from "../../../../public/assets/bathroom-cleaning.png"
 import Vehicle from "../../../../public/assets/vehicle-shifting.png"
 import electrician from "../../../../public/assets/electrician.png"
 
+// Buy home mobile 1
+
+import New_builderss from "../../../../public/assets/new-builder-proj-diwali.png"
+import Home_Interior from "../../../../public/assets/home-renovation-diwali-m.png"
+
+// Buy home mobile 2
+
+import Legal_services from "../../../../public/assets/Legal_service.png"
+import Renovation from "../../../../public/assets/Renovation-diwali.png"
+import Home_Lone from "../../../../public/assets/loan-diwali_m.png"
+import NoBroker_for from "../../../../public/assets/nri-diwali_.png"
+import refer_ear from "../../../../public/assets/refer-diwali_.png"
+
+
+
+export const serviceBuy_2 =[
+  { img: Legal_services, name: "Legal_services" },
+  { img: Renovation, name: "Renovation" },
+  { img: Home_Lone, name: "Home_Lone" },
+  { img: NoBroker_for, name: "NoBroker_for" },
+  { img: refer_ear, name: "refer_ear" }
+]
+
+
+ export const serviceBuy_1 = [
+  { img: New_builderss, name: "New_builderss" },
+  { img: Home_Interior, name: "Home_Interior" }
+];
+
 
 export const serviceImages_2 = [
   {  name: "Packers & Movers", image: Packer },
@@ -47,6 +76,7 @@ export const serviceImages_2 = [
   {  name: "Vehicle Shifting", image: Vehicle },
   {  name: "Electrician", image: electrician },
 ];
+
 
 
 
@@ -130,6 +160,7 @@ export const UseNobroker = [
 
 ]
 
+
 export const serviceImages_1 = [
   {
     id: 1,
@@ -146,3 +177,5 @@ export const serviceImages_1 = [
     bgColor: 'bg-blue-300',
   },
 ];
+
+

@@ -6,9 +6,9 @@ import {serviceImages_1 , serviceImages_2} from "@/app/components/MainPageCompon
 
 
 
-const HomeServices = () => {
+const HomeServicesBuy = () => {
   return (
-    <div className="px-4 mb-4 block md:hidden">
+    <div className="px-4 mb-4 block md:hidden bg-[#FCFAF9]">
       <header className="flex justify-between">
         <h1 className="font-semibold text-lg">Home Services</h1>
         <h2 className="text-sm cursor-pointer hover:underline">See All</h2>
@@ -59,4 +59,4 @@ const HomeServices = () => {
   );
 };
 
-export default HomeServices;
+export default HomeServicesBuy;

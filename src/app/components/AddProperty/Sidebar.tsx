@@ -17,15 +17,8 @@ interface SidebarProps {
 
 const propertyDataTyped: PropertyItem[] = propertyData;
 
-// interface SidebarProps {
-//   changePage: (event: React.MouseEvent<HTMLAnchorElement>) => void;
-// }
-
 const Sidebar: React.FC<SidebarProps> = ({ changePage, activePage }) => {
 
-
-  // const router = useRouter();
-  // const { show } = router.query;
   return (
     <aside className="bg-white w-[17%] h-auto sm:block hidden">
       <ul>

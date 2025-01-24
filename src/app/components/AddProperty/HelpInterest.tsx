@@ -17,10 +17,7 @@ const HelpInterest = () => {
             :
          <div className='flex gap-1 items-center'>
             <img src="https://www.nobroker.in/nb-new/public/Post-Your-Property/tick.svg" alt="" className='w-9 mr-5'/>
-            {/* <div> */}
             <p>Thank you for the interest.<span className='font-semibold'>Our agent will give you a call shortly.</span></p>
-            {/* <p></p> */}
-            {/* </div> */}
         </div>}
     </div>
   )

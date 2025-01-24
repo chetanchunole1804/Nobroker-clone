@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import localityData from "../AddPropertyData.json";
-import Map from '../Map'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
-import { LatLngExpression, LatLng } from 'leaflet';
+import Map from "../Map";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { LatLngExpression, LatLng, divIcon } from "leaflet";
 import SaveContinueButton from "../SaveContinueButton";
 import HelpInterest from "../HelpInterest";
 
@@ -24,8 +24,12 @@ interface LocalityDetailsData {
 }
 
 const LocalityDetails: React.FC = () => {
+  const [landmark, setLandmark] = useState<string>("");
 
-  
+  const handleClick = () => {
+    setLandmark("");
+  };
+
   // Find data for id = 2
   const localityDetailsData = (localityData as LocalityDetailsData[]).find(
     (item) => item.id === 2
@@ -42,7 +46,6 @@ const LocalityDetails: React.FC = () => {
 
   const [position, setPosition] = useState<LatLngExpression | null>(null);
 
-
   const handleUseCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -53,11 +56,11 @@ const LocalityDetails: React.FC = () => {
         },
         (error) => {
           console.error(error);
-          alert('Unable to retrieve your location.');
+          alert("Unable to retrieve your location.");
         }
       );
     } else {
-      alert('Geolocation is not supported by your browser.');
+      alert("Geolocation is not supported by your browser.");
     }
   };
 
@@ -92,7 +95,7 @@ const LocalityDetails: React.FC = () => {
               </select>
             </div>
           ))}
-          <div>
+          <div className="relative">
             <label
               htmlFor=""
               className="font-semibold text-[#635b63] mb-3 text-sm "
@@ -101,9 +104,19 @@ const LocalityDetails: React.FC = () => {
             </label>
             <input
               type="text"
+              value={landmark}
+              onChange={(e) => setLandmark(e.target.value)}
               placeholder="e.g. Evergreen street"
               className="border border-gray-300 w-full py-2 px-2 text-[#837783] text-sm focus:outline outline-1 "
             />
+            {landmark === "" ? null : (
+              <img
+                src="https://www.svgrepo.com/show/80301/cross.svg"
+                alt=""
+                className=" absolute right-4 top-9 w-4"
+                onClick={handleClick}
+              />
+            )}
           </div>
         </div>
 
@@ -129,7 +142,10 @@ const LocalityDetails: React.FC = () => {
                 className="focus:outline-none w-80 pl-3"
               />
             </div>
-            <span className=" cursor-pointer flex gap-2 text-sm pt-2 text-[#009587] font-semibold" onClick={handleUseCurrentLocation}>
+            <span
+              className=" cursor-pointer flex gap-2 text-sm pt-2 text-[#009587] font-semibold"
+              onClick={handleUseCurrentLocation}
+            >
               <img
                 src="https://assets.nobroker.in/nb-new/public/List-Page/location.svg"
                 alt=""
@@ -142,16 +158,22 @@ const LocalityDetails: React.FC = () => {
       </div>
       <div className="mt-14 mb-6">
         <div className="flex">
-          <img src="https://assets.nobroker.in/common/img/location_picker.png" alt="" className="w-8"/>
+          <img
+            src="https://assets.nobroker.in/common/img/location_picker.png"
+            alt=""
+            className="w-8"
+          />
           <p className=" text-[#635b63]">Mark Locality on Map</p>
         </div>
-        <p className=" text-[#948e94] text-sm mb-2 mt-1">Set property location by using search box and move the map</p>
+        <p className=" text-[#948e94] text-sm mb-2 mt-1">
+          Set property location by using search box and move the map
+        </p>
         <div className="w-full h-[270px] overflow-hidden">
           <Map data={position} />
         </div>
       </div>
-      <HelpInterest/>
-      <SaveContinueButton />
+      <HelpInterest />
+      {/* <SaveContinueButton /> */}
     </div>
   );
 };

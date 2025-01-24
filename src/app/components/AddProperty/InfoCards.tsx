@@ -1,6 +1,10 @@
 import React from "react";
 
 const InfoCards: React.FC = () => {
+
+  const intrusted = ()=>{
+    
+  }
   return (
     <div className="w-[16%] bg-white sm:block hidden p-3 text-sm">
       <div className="border-[2px] border-gray-100 flex flex-col justify-center text-center p-2 pt-4">
@@ -44,7 +48,7 @@ const InfoCards: React.FC = () => {
           />
           <p className="text-xs text-[#425d78] mb-3">Price Consultation</p>
         </div>
-        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587] mb-3">Show Intrest</button>
+        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587] mb-3" onClick={intrusted}>Show Intrest</button>
       </div>
     </div>
   );

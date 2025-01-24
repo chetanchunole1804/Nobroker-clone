@@ -22,7 +22,12 @@ interface PropertyDetailsData {
 
 const PropertyDetails: React.FC = () => {
 
-  const [formData, setFormData] = useState<{ [key: string]: string }>({});  // Find the data with id: 1
+  const [formData, setFormData] = useState<{ [key: string]: string }>({});
+
+
+  const [error, setError] = useState()
+
+
   const propertyDetailsData = (propertyData as PropertyDetailsData[]).find(
     (item) => item.id === 1
   )?.PropertyData;
@@ -34,7 +39,6 @@ const PropertyDetails: React.FC = () => {
   const [leftFields, setLeftFields] = useState<PropertyField[]>(
     propertyDetailsData.slice(0, 3)
 
-    
 
   );
   const [rightFields, setRightFields] = useState<PropertyField[]>(
@@ -42,7 +46,7 @@ const PropertyDetails: React.FC = () => {
   );
 
   // console.log(propertyDetailsData[0].TypeOption[0].option4)
-  // console.log(propertyDetailsData[3])
+  // console.log(propertyDetailsData[3])  IMPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPP
 
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = event.target;
@@ -83,13 +87,14 @@ const PropertyDetails: React.FC = () => {
                     (optionsArray as Option[]).flatMap((optionsObj) =>
                       Object.entries(optionsObj).map(([key, option], i) => (
                         <option key={i} value={option} className="rounded-none" disabled={i === 0} 
-                        selected={i === 0}>
+                        >
                           {option}
                         </option>
                       ))
                     )
                   )}
               </select>
+              {/* {errors && <p className="text-red-600">{errors}</p>} */}
             </div>
           ))}
           <div>
@@ -129,7 +134,7 @@ const PropertyDetails: React.FC = () => {
                     (optionsArray as Option[]).flatMap((optionsObj) =>
                       Object.entries(optionsObj).map(([key, option], i) => (
                         <option key={i} value={option} disabled={i === 0} 
-                        selected={i === 0}>
+                      >
                           {option}
                         </option>
                       ))
@@ -142,7 +147,7 @@ const PropertyDetails: React.FC = () => {
       </div>
       </form>
         <HelpInterest/>
-        <SaveContinueButton/>
+        {/* <SaveContinueButton/> */}
     </div>
   );
 };

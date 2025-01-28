@@ -6,7 +6,7 @@ const MessageReceived = () => {
         setIsVisible(false);
       };
   return isVisible ? (
-    <div className='flex bg-black bg-opacity-40 justify-center items-center w-screen h-screen  top-0 left-0 z-10 fixed'>
+    <div className='flex bg-black bg-opacity-40 justify-center items-center w-screen h-screen  top-0 left-0 z-40 fixed'>
         <div className='w-96 h-52 bg-white rounded-lg relative p-5 text-[#837783]'>
             <img src="https://assets.nobroker.in/nb-new/public/Common/payment-success.svg" alt="" className='mx-auto w-10 pt-7'/>
             <span className=' rotate-45 text-4xl absolute top-8 right-5 cursor-pointer' onClick={handleClose}>+</span>

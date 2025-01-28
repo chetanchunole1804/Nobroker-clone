@@ -6,7 +6,7 @@ import SuggessionBox from "../SuggessionBox";
 import { url } from "inspector";
 import AvailableAmenities from "../AvailableAmenities";
 import ShowCountryDialCode from "../ShowCountryDialCode";
-
+import AvailableAmenitiesData from "../AvailableAmenitiesData";
 
 // interface AmenitiesData {
 //   id: number;
@@ -46,26 +46,10 @@ const Amenities = () => {
     console.log(value);
   };
 
-
-
-
-  // const AmenitiesData = (AmenitiesData as AmenitiesData[]).find(
-  //   (item) => item.id === 7
-  // )?.AmenitiesData;
-
-  // if (!AmenitiesData) {
-  //   return <p>No data found.</p>;
-  // }
-
-  // const [leftFields, setLeftFields] = useState<AmenitiesField[]>(
-  //     AmenitiesData.slice(0, 8)
+  const leftAmenities = AvailableAmenitiesData.slice(0, 9);
+  const rightAmenities = AvailableAmenitiesData.slice(9, 17);
   
-  //   );
-  //   const [rightFields, setRightFields] = useState<AmenitiesField[]>(
-  //     AmenitiesData.slice(9, 16)
-  //   );
 
-    
   return (
     <div className="sm:w-[67%] w-[100%] h-auto bg-white px-12 overflow-hidden relative">
       <h1 className="text-[#009587] text-lg font-semibold py-4">
@@ -74,7 +58,7 @@ const Amenities = () => {
       <div className="h-[1px] w-screen bg-gray-200 absolute right-0 mt-[5px]"></div>
 
       <form action="" className="text-sm text-[#837783] mt-4">
-        <div className="flex w-full justify-between gap-2">
+        <div className="flex w-full sm:flex-row flex-col sm:justify-between">
           <div>
             <label htmlFor="">Bathroom(s)*</label>
             <div className="w-full border border-gray-300 rounded flex justify-between gap-16 px-1 py-1 mt-2 items-center">
@@ -130,7 +114,7 @@ const Amenities = () => {
                 name=""
                 id=""
               >
-                <option value="Select" selected disabled>
+                <option value="Select" disabled>
                   Select
                 </option>
                 <option value="Corporation">Corporation</option>
@@ -140,8 +124,8 @@ const Amenities = () => {
             </div>
           </div>
         </div>
-        <div className="flex w-full gap-2 mt-7 text-xs">
-          <div className="flex items-center border border-gray-300 px-1 py-1 w-[33%] gap-2 rounded">
+        <div className="flex w-full gap-2 mt-7 text-xs sm:flex-row flex-col ">
+          <div className="flex items-center border border-gray-300 px-1 py-1 sm:w-[33%] gap-2 rounded">
             <img
               src="https://assets.nobroker.in/nb-new/public/Pyp-Form/gym_black_new.svg"
               alt=""
@@ -149,7 +133,7 @@ const Amenities = () => {
             <p>Gym*</p>
             <AmenitiesCheckvox label="Gym" />
           </div>
-          <div className="flex items-center border border-gray-300 px-1 py-1 w-[33%] gap-2 rounded">
+          <div className="flex items-center border border-gray-300 px-1 py-1 sm:w-[33%] gap-2 rounded">
             <img
               src="https://assets.nobroker.in/static/img/postYourProperty/icon/nonveg.png"
               alt=""
@@ -157,7 +141,7 @@ const Amenities = () => {
             <p>Non-Veg Allowed*</p>
             <AmenitiesCheckvox label="non-veg" />
           </div>
-          <div className="flex items-center border border-gray-300 px-1 py-1 w-[33%] gap-2 rounded">
+          <div className="flex items-center border border-gray-300 px-1 py-1 sm:w-[33%] gap-2 rounded">
             <img
               src="https://assets.nobroker.in/static/img/postYourProperty/icon/security.png"
               alt=""
@@ -167,7 +151,7 @@ const Amenities = () => {
           </div>
         </div>
 
-        <div className="mt-8 flex gap-4">
+        <div className="mt-8 flex gap-4 sm:flex-row flex-col ">
           <div>
             <label htmlFor="" className="font-semibold">
               Who will show the property?*
@@ -183,7 +167,7 @@ const Amenities = () => {
                 name=""
                 id=""
               >
-                <option value="Select" selected disabled>
+                <option value="Select" disabled>
                   Select
                 </option>
                 <option value="Need help">Need help</option>
@@ -210,7 +194,7 @@ const Amenities = () => {
             </div>
           </div>
         </div>
-        <div className="flex px-2 py-3 border border-gray-300 w-[75%] items-center mt-4 rounded">
+        <div className="flex sm:flex-row  px-2 py-3 border border-gray-300 sm:w-[75%] items-center mt-4 rounded">
           <p>
             Do you have more similar{" "}
             <span className="font-semibold">units/properties</span> availaible ?
@@ -238,202 +222,32 @@ const Amenities = () => {
           <label htmlFor="" className="font-semibold text-base">
             Select the available amenities
           </label>
-          <div className="sm:w-[60%] mt-3 mb-10">
-
-
-
-            
-
-            <div className="flex mb-7 sm:gap-16">
-              <div className="w-full">
-                <AvailableAmenities
+          <div className=" mt-8 mb-10">
+            <div className="flex justify-between sm:flex-row flex-col">
+              <div className="w-full ">
+                {leftAmenities.map((item) => (
+                  <AvailableAmenities
+                  key={item.label}
                   customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                    backgroundPosition: "-25px -477px",
-                  }}
-                  label="Lift"
-                />{" "}
+                      backgroundImage: item.backgroundImage,
+                      backgroundPosition: item.backgroundPosition,
+                    }}
+                    label={item.label}
+                    
+                  />
+                ))}
               </div>
               <div className="w-full">
-                <AvailableAmenities
-                  customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                    backgroundPosition: "-25px -1229px",
-                  }}
-                  label="Internet Services"
-                />{" "}
-              </div>
-            </div>
-
-
-
-
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-                <AvailableAmenities
-                  customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                    backgroundPosition: "-25px -25px",
-                  }}
-                  label="Air Conditioner"
-                />{" "}
-              </div>
-              <div className="w-full">
-                <AvailableAmenities
-                  customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                    backgroundPosition: "0px -832px",
-                  }}
-                  label="Club House"
-                />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-                <AvailableAmenities
-                  customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                    backgroundPosition: "-25px -1079px",
-                  }}
-                  label="Intercom"
-                />{" "}
-              </div>
-              <div className="w-full">
-                <AvailableAmenities
-                  customStyle={{
-                    backgroundImage:
-                      "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                    backgroundPosition: "-25px -2057px",
-                  }}
-                  label="Swimming Pool"
-                />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -1907px",
-                }}
-                label="Children Play Area"
-              />{" "}
-              </div>
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -627px",
-                }}
-                label="Fire Safety"
-              />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                  backgroundPosition: "-2px -1172px",
-                }}
-                label="Servant Room"
-              />{" "}
-              </div>
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -2659px",
-                }}
-                label="Shopping Center"
-              />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                  backgroundPosition: "-1px -936px",
-                }}
-                label="Gas Pipeline"
-              />{" "}
-              </div>
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -1607px",
-                }}
-                label="Park"
-              />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                  backgroundPosition: "-1px -549px",
-                }}
-                label="Rain Water Harvesting"
-              />{" "}
-              </div>
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                  backgroundPosition: "-5px -519px",
-                }}
-                label="Sewage Treatment Plant"
-              />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icons-sprite.png')",
-                  backgroundPosition: "-3px -395px",
-                }}
-                label="House Keeping"
-              />{" "}
-              </div>
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -2207px",
-                }}
-                label="Power Backup"
-              />{" "}
-              </div>
-            </div>
-            <div className="flex justify-between mb-7 sm:gap-16">
-              <div className="w-full">
-              <AvailableAmenities
-                customStyle={{
-                  backgroundImage:
-                    "url('https://assets.nobroker.in/static/img/icon/amenities/amenities-sprite_2.png')",
-                  backgroundPosition: "-25px -1757px",
-                }}
-                label="Visitor Parking"
-              />{" "}
+                {rightAmenities.map((item) => (
+                  <AvailableAmenities
+                  key={item.label}
+                    customStyle={{
+                      backgroundImage: item.backgroundImage,
+                      backgroundPosition: item.backgroundPosition,
+                    }}
+                    label={item.label}
+                  />
+                ))}
               </div>
             </div>
           </div>

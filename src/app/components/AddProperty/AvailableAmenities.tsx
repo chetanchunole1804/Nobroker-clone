@@ -2,7 +2,7 @@ import React,{useState} from "react";
 
 interface AvailableAmenitiesProps {
   label: string; // Corrected the prop name
-  customStyle: React.CSSProperties; // Explicitly typing for CSS styles
+  customStyle: React.CSSProperties; 
 
 }
 
@@ -12,27 +12,28 @@ const AvailableAmenities: React.FC<AvailableAmenitiesProps> = ({ label, customSt
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checked) {
-      setAvailAmenities(label); // Set the label when checked
+      setAvailAmenities(label);
       console.log(availAmenities)
+      console.log(customStyle);
     } else {
-      setAvailAmenities(null); // Clear the value when unchecked
+      setAvailAmenities(null); 
     }
   };
   return (
-    <div>
-      <div className="flex items-center gap-2">
+    
+      <div className="flex items-center gap-2 mb-9">
         <input type="checkbox"
           className="pr-3 p-2"
-          checked={availAmenities === label} // Check if the current label is selected
-          onChange={handleCheckboxChange} // Handle change
+          checked={availAmenities === label} 
+          onChange={handleCheckboxChange}
         />
         <div
           className="h-[25px] w-[25px] flex items-center bg-no-repeat"
-          style={customStyle} // Using customStyle correctly
+          style={customStyle} 
         ></div>
-        <span>{label}</span> {/* Corrected the prop usage */}
+        <span>{label}</span> 
       </div>
-    </div>
+    
   );
 };
 

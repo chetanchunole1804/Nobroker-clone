@@ -49,7 +49,7 @@ const CustomDropdown = () => {
 
       {isDropdownOpen && (
 
-      <ul className="absolute left-0 w-[16vw] mt-2 bg-white border shadow-lg max-h-60  z-40 overflow-auto">
+      <ul className="absolute left-0 sm:w-[16vw] mt-2 bg-white border shadow-lg max-h-60  z-40 overflow-auto">
         {countries.map((country) => (
           <li
             key={country.code}

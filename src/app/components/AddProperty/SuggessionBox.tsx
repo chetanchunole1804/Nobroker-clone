@@ -8,7 +8,7 @@ const InfoBox: FC = () => {
   };
 
   return isVisible ? (
-    <div className="relative p-4 bg-blue-100  rounded-lg w-[55%] mt-2 z-10">
+    <div className="relative p-4 bg-blue-100  rounded-lg sm:w-[55%] mt-2 z-10">
         <div className=" absolute bg-blue-100 rounded-md w-12 h-10 top-9 left-1 -z-10 rotate-45"> "</div>
       <div className="flex items-start">
         <div>
@@ -24,7 +24,7 @@ const InfoBox: FC = () => {
         </div>
         <button
           onClick={handleClose}
-          className="absolute top-4 right-5 text-3xl pb-2 px-3 flex items-center justify-center text-center rotate-45 text-[#6b9db4] font-extrabold bg-[#cee1ea] rounded-full"
+          className="absolute sm:top-4 sm:right-5 top-11 right-1 text-3xl pb-2 px-3 flex items-center justify-center text-center rotate-45 text-[#6b9db4] font-extrabold bg-[#cee1ea] rounded-full"
         >
             <p>+</p>
           

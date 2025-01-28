@@ -26,21 +26,6 @@ const RentalDetails = () => {
     setRentType(value);
   };
 
-  // const rentalDetailsData = (rentalData as RentalDetailsData[]).find(
-  //   (item) => item.id === 3
-  // )?.RentalData;
-
-  // if (!rentalDetailsData) {
-  //   return <p>No data found.</p>;
-  // }
-
-  // const [leftFields, setLeftFields] = useState<RentalField>(
-  //     // RentalDetailsData.slice(0, 1)
-  //   );
-  //   const [rightFields, setRightFields] = useState(
-  //     // RentalDetailsData.slice(3, 8)
-  //   );
-
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedReantType = event?.target.value;
     setMaintenance(selectedReantType === "Maintenance Extra");
@@ -121,8 +106,8 @@ const RentalDetails = () => {
             </label>
           </div>
         </div>
-        <div className="flex justify-between mt-5">
-          <div className="w-[45%]">
+        <div className="flex justify-between mt-5 sm:flex-row flex-col">
+          <div className="sm:w-[45%]">
             <label htmlFor="" className="font-semibold  mb-1">
               {" "}
               {rentType === "only-rent"
@@ -141,7 +126,7 @@ const RentalDetails = () => {
               {rentType === "only-rent" ? <span>/month</span> : <span></span>}
             </div>
           </div>
-          <div className="w-[45%]">
+          <div className="sm:w-[45%]">
             {rentType === "only-rent" ? (
               <div>
                 <label htmlFor="" className="font-semibold  mb-1">
@@ -162,8 +147,8 @@ const RentalDetails = () => {
             )}
           </div>
         </div>
-        <div className="flex justify-between mt-5">
-          <div className="w-[45%]">
+        <div className="flex justify-between mt-5 sm:flex-row flex-col">
+          <div className="sm:w-[45%]">
             <label htmlFor="" className="font-semibold  mb-1">
               Monthly Maintenance
             </label>
@@ -173,7 +158,7 @@ const RentalDetails = () => {
               className="flex gap-2 items-center border border-gray-300 w-full px-2 py-2 text-sm text-[#837783] mt-2 focus:outline outline-1"
               onChange={handleSelectChange}
             >
-              <option value="Select" selected disabled>
+              <option value="Select" disabled>
                 Select
               </option>
               <option value="Maintenance Included">
@@ -183,7 +168,7 @@ const RentalDetails = () => {
               <option value="Maintenance Extra">Maintenance Extra</option>
             </select>
           </div>
-          <div className="w-[45%]">
+          <div className="sm:w-[45%] sm:pt-0 pt-5">
             {maintenance ? (
               <div>
                 <label htmlFor="" className="font-semibold  mb-1">
@@ -203,7 +188,7 @@ const RentalDetails = () => {
             )}
           </div>
         </div>
-        <div className="mt-3 w-[45%]">
+        <div className="mt-3 sm:w-[45%]">
           <label htmlFor="" className="font-semibold">
             Available From*
           </label>
@@ -217,7 +202,7 @@ const RentalDetails = () => {
           <label htmlFor="" className="font-semibold">
             Preferred Tenants*
           </label>
-          <div className="flex gap-8  items-center mt-2">
+          <div className="flex sm:gap-8 gap-4 sm:flex-row flex-col sm:items-center mt-2">
             {" "}
             <span className="flex gap-2">
               <input type="checkbox" value="Anyone" />
@@ -241,8 +226,8 @@ const RentalDetails = () => {
             </span>
           </div>
         </div>
-        <div className="flex justify-between mt-4">
-          <div className="w-[45%] relative ">
+        <div className="flex justify-between mt-4 sm:flex-row flex-col">
+          <div className="sm:w-[45%] relative ">
             <label htmlFor="" className="font-semibold">
               Furnishing*
             </label>
@@ -256,7 +241,7 @@ const RentalDetails = () => {
               name=""
               id=""
             >
-              <option value="Select" selected disabled>
+              <option value="Select"  disabled>
                 Select
               </option>
               <option value="Fully furnished">Fully furnished</option>
@@ -264,7 +249,7 @@ const RentalDetails = () => {
               <option value="Unfurnished">Unfurnished</option>
             </select>
           </div>
-          <div className="w-[45%] relative ">
+          <div className="sm:w-[45%] relative ">
             <label htmlFor="" className="font-semibold">
               Furnishing*
             </label>
@@ -278,7 +263,7 @@ const RentalDetails = () => {
               name=""
               id=""
             >
-              <option value="Select" selected disabled>
+              <option value="Select" disabled>
                 Select
               </option>
               <option value="bike">Bike</option>

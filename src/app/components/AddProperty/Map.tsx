@@ -32,7 +32,6 @@ const SearchBar: React.FC = () => {
   return (
     <div
       style={{
-        width: "80%",
         position: "absolute",
         top: "10px",
         left: "70px",
@@ -103,9 +102,9 @@ const MapWithSearch: React.FC<MapWithSearchProps> = ({ data }) => {
   // Create a custom marker icon
   const customIcon = new L.Icon({
     iconUrl:"https://assets.nobroker.in/nob-merchandise/map-pin.svg",
-    iconSize: [32, 32], // Set the size of the icon
-    iconAnchor: [16, 32], // Set the anchor point for the icon
-    popupAnchor: [0, -32], // Adjust the popup position
+    iconSize: [32, 32],
+    iconAnchor: [16, 32], 
+    popupAnchor: [0, -32], 
   });
 
   return (
@@ -118,7 +117,7 @@ const MapWithSearch: React.FC<MapWithSearchProps> = ({ data }) => {
       <SearchBar />
       <Marker
         position={data || initialPosition}
-        icon={customIcon} // Apply the custom icon here
+        icon={customIcon} 
       >
         <Popup>
           {data

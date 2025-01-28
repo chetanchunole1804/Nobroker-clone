@@ -5,7 +5,6 @@ import ProgressBar from "../AddProperty/ProgressBar";
 import InfoCards from "./InfoCards";
 import Sidebar from "./Sidebar";
 import PropertyDetails from "./AddPropertyForms/PropertyDetails";
-import MobileHeader from "./MobileHeader";
 import LocalityDetails from "./AddPropertyForms/LocalityDetails";
 import RentalDetails from "./AddPropertyForms/RentalDetails";
 import Amenities from "./AddPropertyForms/Amenities";
@@ -15,61 +14,159 @@ import SaveContinueButton from "./SaveContinueButton";
 
 const PropertyDetailsForm: React.FC = () => {
   const [activePage, setActivePage] = useState<string>("PropertyDetails");
-  //"PropertyDetails" change from gallery
+  const [formData, setFormData] = useState<any>({});
   const [isComplete, setIsComplete] = useState<boolean>(false);
+  const [formErrors, setFormErrors] = useState<{ [key: string]: string }>({}); // Stores errors
+  // const [allPages, setAllPages] = useState()
+
+  const allPages = [
+    "PropertyDetails",
+    "LocalityDetails",
+    "RentalDetails",
+    "Amenities",
+    "Gallery",
+    "Schedule",
+  ];
+
+  const validatePage = (): boolean => {
+    const errors: { [key: string]: string } = {};
+    const currentData = formData[activePage] || {};
+
+    // Custom validation logic for each page
+    if (activePage === "PropertyDetails" && !currentData.propertyName) {
+      errors.propertyName = "Property name is required.";
+    }
+    // if (activePage === "LocalityDetails" && !currentData.locality) {
+    //   errors.locality = "Locality is required.";
+    // }
+    // if (activePage === "RentalDetails" && !currentData.rentAmount) {
+    //   errors.rentAmount = "Rent amount is required.";
+    // }
+
+    // Add more validations as needed for other pages...
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0; // Return true if no errors
+  };
+
+  const currentPageIndex = allPages.indexOf(activePage);
+  // Calculate progress: Start at 0% and increase by 20% for each page
+  let progress = (currentPageIndex / (allPages.length - 1)) * 90;
+  if (isComplete) progress = 100;
+
+  // const handleNextPage = () => {
+  //   if (currentPageIndex < allPages.length - 1) {
+  //     setActivePage(allPages[currentPageIndex + 1]);
+
+  //   }
+  // };
+
+  // const handleComplete = () => {
+  //   if (currentPageIndex === allPages.length - 1) {
+  //     setIsComplete(true);
+  //   }
+  // };
+
+  // const handleBackPage = () => {
+  //   if (currentPageIndex > 0) {
+  //     setActivePage(allPages[currentPageIndex - 1]);
+  //   }
+  // };
+
 
   const pageChange = (page: string) => {
     setActivePage(page);
   };
 
-  const pageComponents: Record<string, JSX.Element> = {
-    PropertyDetails: <PropertyDetails />,
-    LocalityDetails: <LocalityDetails />,
-    RentalDetails: <RentalDetails />,
-    Amenities: <Amenities />,
-    Gallery: <Gallery />,
-    Schedule: <Schedule />,
-  };
-
-
-  const pages = Object.keys(pageComponents);
-  const currentPageIndex = pages.indexOf(activePage);
-  
-  // Calculate progress: Start at 0% and increase by 20% for each page
-  let progress = (currentPageIndex / (pages.length - 1)) * 90; // 90% for the last page
-  if (isComplete) progress = 100; // 100% if all fields are completed
-  
   const handleNextPage = () => {
-    if (currentPageIndex < pages.length - 1) {
-      setActivePage(pages[currentPageIndex + 1]);
-    }
-  };
-  
-  const handleComplete = () => {
-    if (currentPageIndex === pages.length - 1) {
-      setIsComplete(true);
+    if (validatePage()) {
+      if (currentPageIndex < allPages.length - 1) {
+        setActivePage(allPages[currentPageIndex + 1]);
+      }
     }
   };
 
   const handleBackPage = () => {
     if (currentPageIndex > 0) {
-      setActivePage(pages[currentPageIndex - 1]);
+      setActivePage(allPages[currentPageIndex - 1]);
     }
   };
-  
+
+  const handleComplete = () => {
+    if (currentPageIndex === allPages.length - 1 && validatePage()) {
+      setIsComplete(true);
+      console.log("Form Submitted Successfully:", formData);
+    }
+  };
+
+  const handleInputChange = (key: string, value: string) => {
+    setFormData((prevData: any) => ({
+      ...prevData,
+      [activePage]: {
+        ...prevData[activePage],
+        [key]: value,
+      },
+    }));
+  };
 
   return (
     <div className="sm:w-[88%] mx-auto h-full sm:pb-10 pt-[4px]">
-      <ProgressBar progress={progress} />
-      <MobileHeader />
+      <ProgressBar
+        progress={progress}
+        activePage={activePage}
+        onBack={handleBackPage}
+      />
+      {/* <MobileHeader /> */}
       <main className="flex gap-3 mt-2">
-        <Sidebar changePage={pageChange} activePage={activePage} />
-        {pageComponents[activePage]}
+        <Sidebar changePage={setActivePage} activePage={activePage} />
+        {/* {pageComponents[activePage]} */}
+        {activePage === "PropertyDetails" && (
+          <PropertyDetails
+            data={formData.PropertyDetails || {}}
+            errors={formErrors}
+            onChange={handleInputChange}
+          />
+        )}
+        {activePage === "LocalityDetails" && (
+          <LocalityDetails
+          // data={formData.LocalityDetails || {}}
+          // errors={formErrors}
+          // onChange={handleInputChange}
+          />
+        )}
+        {activePage === "RentalDetails" && (
+          <RentalDetails
+          // data={formData.RentalDetails || {}}
+          // errors={formErrors}
+          // onChange={handleInputChange}
+          />
+        )}
+        {activePage === "Amenities" && (
+          <Amenities
+          // data={formData.Amenities || {}}
+          // errors={formErrors}
+          // onChange={handleInputChange}
+          />
+        )}
+        {activePage === "Gallery" && (
+          <Gallery
+          // data={formData.Gallery || {}}
+          // errors={formErrors}
+          // onChange={handleInputChange}
+          />
+        )}
+        {activePage === "Schedule" && (
+          <Schedule
+          // data={formData.Schedule || {}}
+          // errors={formErrors}
+          // onChange={handleInputChange}
+          />
+        )}
         <InfoCards />
       </main>
       <SaveContinueButton
         currentPageIndex={currentPageIndex}
-        totalPages={pages.length}
+        totalPages={allPages.length}
         onNext={handleNextPage}
         onComplete={handleComplete}
         onBack={handleBackPage}

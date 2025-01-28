@@ -16,7 +16,7 @@ const InfoCards: React.FC = () => {
           className="w-24 my-3"
         />
         <p className=" leading-relaxed">No need to visit Government office</p>
-        <button className="py-2 w-24 mx-auto rounded-sm text-white px-1 bg-[#009587]">
+        <button className="py-2 mx-auto rounded-sm text-white px-1 bg-[#009587]">
           Get It Now
         </button>
       </div>

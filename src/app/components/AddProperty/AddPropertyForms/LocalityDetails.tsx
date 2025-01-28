@@ -65,13 +65,13 @@ const LocalityDetails: React.FC = () => {
   };
 
   return (
-    <div className="sm:w-[67%] w-[100%] h-auto bg-white px-12 overflow-hidden relative">
+    <div className="sm:w-[67%] w-[100%] h-auto bg-white px-12 overflow-hidden relative sm:pb-0 pb-20">
       <h1 className="text-[#009587] text-lg font-semibold py-4">
         Locality Details
       </h1>
       <div className="h-[1px] w-screen bg-gray-200 absolute right-0 mt-[5px]"></div>
-      <div className="flex justify-between">
-        <div className="w-[48%]">
+      <div className="flex justify-between sm:flex-row flex-col">
+        <div className="sm:w-[48%]">
           {leftFields.map((field, index) => (
             <div key={index} className="flex flex-col text-sm mb-10 mt-5">
               <label className="font-semibold text-[#635b63] mb-2">
@@ -120,7 +120,7 @@ const LocalityDetails: React.FC = () => {
           </div>
         </div>
 
-        <div className="w-[48%] ">
+        <div className="sm:w-[48%] ">
           <div className="flex flex-col text-sm mb-5 mt-5">
             <label
               htmlFor=""

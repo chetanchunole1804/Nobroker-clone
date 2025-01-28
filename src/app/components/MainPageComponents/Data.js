@@ -49,33 +49,10 @@ import NoBroker_for from "../../../../public/assets/nri-diwali_.png"
 import refer_ear from "../../../../public/assets/refer-diwali_.png"
 
 
+// Buy Loans and legal
 
-export const serviceBuy_2 =[
-  { img: Legal_services, name: "Legal_services" },
-  { img: Renovation, name: "Renovation" },
-  { img: Home_Lone, name: "Home_Lone" },
-  { img: NoBroker_for, name: "NoBroker_for" },
-  { img: refer_ear, name: "refer_ear" }
-]
-
-
- export const serviceBuy_1 = [
-  { img: New_builderss, name: "New_builderss" },
-  { img: Home_Interior, name: "Home_Interior" }
-];
-
-
-export const serviceImages_2 = [
-  {  name: "Packers & Movers", image: Packer },
-  {  name: "Rental Agreement", image: Rental_Agreemen },
-  {  name: "Plumbing & Carpentry", image: Plumbing_Carpentrym },
-  {  name: "Refer & Earn", image: Refer_earn },
-  {  name: "Sofa Cleaning", image: Sofa_cleaning },
-  {  name: "Kitchen Cleaning", image: Kitchen },
-  {  name: "Bathroom Cleaning", image: Bathroom },
-  {  name: "Vehicle Shifting", image: Vehicle },
-  {  name: "Electrician", image: electrician },
-];
+import Home_Lones_M from "../../../../public/assets/homeLoanService-m.png"
+import Legal_services_m from "../../../../public/assets/legalService-m.png"
 
 
 
@@ -178,4 +155,95 @@ export const serviceImages_1 = [
   },
 ];
 
+
+export const serviceBuy_2 =[
+  { img: Legal_services, name: "Legal_services" },
+  { img: Renovation, name: "Renovation" },
+  { img: Home_Lone, name: "Home_Lone" },
+  { img: NoBroker_for, name: "NoBroker_for" },
+  { img: refer_ear, name: "refer_ear" }
+]
+
+
+ export const serviceBuy_1 = [
+  { img: New_builderss, name: "New_builderss" },
+  { img: Home_Interior, name: "Home_Interior" }
+];
+
+
+export const serviceImages_2 = [
+  {  name: "Packers & Movers", image: Packer },
+  {  name: "Rental Agreement", image: Rental_Agreemen },
+  {  name: "Plumbing & Carpentry", image: Plumbing_Carpentrym },
+  {  name: "Refer & Earn", image: Refer_earn },
+  {  name: "Sofa Cleaning", image: Sofa_cleaning },
+  {  name: "Kitchen Cleaning", image: Kitchen },
+  {  name: "Bathroom Cleaning", image: Bathroom },
+  {  name: "Vehicle Shifting", image: Vehicle },
+  {  name: "Electrician", image: electrician },
+];
+
+
+export const Loans_Legal = [
+  {
+    img: Home_Lones_M,
+    title: "Home Lones",
+    des:"Lowest interest rate form 7.8%"
+  },
+  {
+    img: Legal_services_m,
+    title: "Legal Services",
+    des:"Get end to end legal assistance"
+  }
+]
+
+
+// Assisted Plans Data with Background Position
+export const Assisted_Plans_m = [
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/extraservicesprite_v1.svg",
+    img_position: "-36px 313px",
+    title: "Dedicated Property Expert to guide you",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/extraservicesprite_v1.svg",
+    img_position: "-94px 313px",
+    title: "Guaranteed property or 100% refund",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/extraservicesprite_v1.svg",
+    img_position: "-150px 313px",
+    title: "Receive instant property alerts",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/extraservicesprite_v1.svg",
+    img_position: "-207px 317px",
+    title: "Explore More",
+  },
+];
+
+
+
+export const legalService = [
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/nb_dynamic_grid_new_v5_new.svg", // Updated link
+    img_position: "-50px -120px",
+    title: "Rental Agreement",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/nb_dynamic_grid_new_v5_new.svg", // Updated link
+    img_position: "-108px -120px",
+    title: "Tenant Verification",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/nb_dynamic_grid_new_v5_new.svg", // Updated link
+    img_position: "-160px -120px",
+    title: "Sale Agreement",
+  },
+  {
+    img: "https://assets.nobroker.in/nb-new/public/Home/nb_dynamic_grid_new_v5_new.svg", // Updated link
+    img_position: "-211px -118px",
+    title: "Property Legal ",
+  },
+];
 

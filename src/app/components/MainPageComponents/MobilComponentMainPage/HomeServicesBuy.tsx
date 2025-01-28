@@ -2,12 +2,16 @@ import Image from 'next/image';
 import React from 'react';
 import nbcile from '../../../../../public/assets/nbseal.svg'
 import {serviceImages_1 , serviceImages_2} from "@/app/components/MainPageComponents/Data"
+import Lone_Legal from './Lone_Legal';
+import InstantCashComponent from './InstantCash';
+import New_Builder from './New_Builder';
 
 
 
 
 const HomeServicesBuy = () => {
   return (
+    <div className="">
     <div className="px-4 mb-4 block md:hidden bg-[#FCFAF9]">
       <header className="flex justify-between">
         <h1 className="font-semibold text-lg">Home Services</h1>
@@ -55,6 +59,12 @@ const HomeServicesBuy = () => {
   ))}
 </div>
 
+
+
+    </div>
+    <InstantCashComponent/>
+    <Lone_Legal/>
+    <New_Builder/>
     </div>
   );
 };

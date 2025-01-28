@@ -2,12 +2,16 @@ import Image from 'next/image';
 import React from 'react';
 import nbcile from '../../../../../public/assets/nbseal.svg'
 import {serviceBuy_2 , serviceBuy_1} from "@/app/components/MainPageComponents/Data"
+import InstantCashComponent from './InstantCash';
+import Packers_rent from './Packers_rent';
 
 
 
 
 const HomeServicesRent = () => {
   return (
+
+    <div className="">
     
     <div className="px-4 mb-4 block md:hidden bg-[#FCFAF9]">
       <header className="flex justify-between">
@@ -55,7 +59,9 @@ const HomeServicesRent = () => {
     </div>
   ))}
 </div>
-
+</div>
+<InstantCashComponent/>
+<Packers_rent/>
     </div>
   );
 };

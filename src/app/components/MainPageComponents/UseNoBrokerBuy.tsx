@@ -37,8 +37,9 @@ const UseNoBroker = () => {
           </div>
         ))}
       </div>
+      <h2 className="text-[#C2B5AF]">3 Lacs + Services booked in last 3 months | 4.5</h2>
     </div>
-    <h2 className="text-[#C2B5AF]">3 Lacs + Services booked in last 3 months | 4.5</h2>
+   
     </div>
   );
 };

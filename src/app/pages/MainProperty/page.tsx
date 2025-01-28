@@ -8,9 +8,13 @@ import RentServices from "@/app/components/MainPageComponents/UseNoBrokerRent";
 import Link from "next/link";
 import MainPageBottom from "@/app/components/MainPageComponents/MainPageBottom";
 import PostFreeAd from "@/app/components/MainPageComponents/MobilComponentMainPage/PostFreeAd";
-import HomeServices from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesRent";
 import HomeServicesRent from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesRent";
 import HomeServicesBuy from "@/app/components/MainPageComponents/MobilComponentMainPage/HomeServicesBuy";
+import Assisted_Plan from "@/app/components/MainPageComponents/MobilComponentMainPage/Assisted_palan";
+import One_stop from "@/app/components/MainPageComponents/MobilComponentMainPage/One_stop";
+import Legal_services from "@/app/components/MainPageComponents/MobilComponentMainPage/Legal_services";
+import Interiors_renovations from "@/app/components/MainPageComponents/MobilComponentMainPage/Interiors_renovations";
+import Packers_rent from "@/app/components/MainPageComponents/MobilComponentMainPage/Packers_rent";
 
 
 
@@ -107,7 +111,7 @@ const Page = () => {
                 </div>
                 {/* Filters */}
                 <div className="border bg-[#F8F8F8] md:bg-white rounded-lg md:rounded-none  flex flex-wrap justify-around items-center gap-2 mt-3 md:mt-0">
-                  <div className="flex justify-between block md:hidden items-center  w-full  p-2">
+                  <div className="flex justify-between  md:hidden items-center  w-full  p-2">
                     <div className=" flex gap-2">
                       <Image src={Handlog} width={40} height={20} alt="" />
                       <div className="">
@@ -193,6 +197,20 @@ const Page = () => {
         {(activeOption === "Buy" || activeOption === "Commercial") && <UseNoBroker />}
 
         <MainPageBottom/>
+
+        <Assisted_Plan/>
+
+        <Legal_services/>
+
+        <Interiors_renovations/>
+
+        <Packers_rent/>
+
+        {/* <One_stop/> */}
+
+       
+
+
       </div>
       
     </div>

@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 const MainPageBottom = () => {
   return (
-    <div className='mt-12'>
+    <div className='mt-12 hidden md:block'>
     <div className="flex justify-between items-center">
       <div className="h-[1px] relative w-[35%] bg-slate-200">
         <span className="w-8 h-8 top-[-15px] right-[-33px] rounded-full border absolute border-red-600"></span>

@@ -2,6 +2,7 @@ import React from 'react'
 import Mobile_assets from "../../../../../public/assets/mobile_assets.svg"
 import Image from 'next/image'
 
+
 const PostFreeAd = () => {
   return (
     <div className='w-full mt-4'>

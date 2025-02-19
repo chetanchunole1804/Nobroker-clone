@@ -115,7 +115,60 @@ const Nav = () => {
             </div>
           </div>
         </div>
+        {isSidebarOpen || (
+          <div className="md:hidden fixed right-0 left-0 top-[33px] flex justify-center z-31 pt-[25px]">
+            <div
+              className="rounded-[35px] shadow-[inset_-9px_-2px_3px_0px_#0000000D] relative w-[75%] flex items-center justify-center h-[32px] border-[1px] border-solid border-[#d4d2c6] px-[8px] bg-white"
+            >
+              {/* 1st block */}
+              <div
+                className="w-[24px] h-[24px] flex-shrink-0"
+                style={{
+                  backgroundImage:
+                    "url('https://assets.nobroker.in/nb-new/public/Home/newHomeIcons/homePageIconSpritenew.svg')",
+                  backgroundPositionX: "-80px",
+                  backgroundPositionY: "-233px",
+                  backgroundRepeat: "no-repeat",
+                  backgroundSize: "307px",
+                }}
+              ></div>
+              {/* 2nd block moving text */}
+              <div className="flex flex-grow-1 h-[100%] overflow-hidden mr-[6px] items-center w-[100%] ">
+                <div
+                  className="flex flex-shrink-0 flex-grow-1 h-[40%] relative top-[1px] justify-center items-center"
+                  style={{
+                    backgroundImage:
+                      "url('https://assets.nobroker.in/nb-new/public/Home/FestiveServiceIcons/marqueediwalinew.svg')",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "repeat no-repeat",
+                    backgroundPosition: "0px 0px",
+                    animation: "moveText 375s linear infinite",
+                    width: "105%",
+                  }}
+                ></div>
+              </div>
+              {/* 3rd block */}
+              <div
+                className="h-[80%] w-[1px] flex-shrink-0 mr-[4px]"
+                style={{
+                  background:
+                    "linear-gradient(173.49deg, rgba(248, 236, 238, 0) 10.25%, #867F7F 55.86%, rgba(241, 230, 231, 0) 89.19%)",
+                }}
+              ></div>
+
+              {/* image */}
+              <Image
+                src={"https://assets.nobroker.in/nob-common/upto60offnew.svg"}
+                width={80}
+                height={12}
+                className="relative top-[2px] flex-shrink-0"
+                alt=""
+              ></Image>
+            </div>
+          </div>
+        )}
       </div>
+
 
       {/* Sidebar */}
       <div

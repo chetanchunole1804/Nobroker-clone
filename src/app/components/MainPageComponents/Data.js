@@ -18,6 +18,8 @@ import Free_Listing from "../../../../public/assets/FreeListing.png"
 import Shortlist from "../../../../public/assets/Shortist_without_visit.png"
 import Rental_Agreement from "../../../../public/assets/Rental_Agreement.png"
 
+import BuilderAssists from "../../../../public/assets/BuilderAssists.png"
+
 
 // Rent home mobile 1
 import New_builder from '../../../../public/assets/New_builder.png';
@@ -53,6 +55,7 @@ import refer_ear from "../../../../public/assets/refer-diwali_.png"
 
 import Home_Lones_M from "../../../../public/assets/homeLoanService-m.png"
 import Legal_services_m from "../../../../public/assets/legalService-m.png"
+import { title } from "process";
 
 
 
@@ -135,6 +138,95 @@ export const UseNobroker = [
   des:"Assistance in creating Rental agreement & Paper work"
 },
 
+]
+
+export const NoBrokerBussiness = [
+  {
+    img: BuilderAssists,
+    title:"Builder Assists",
+  },
+]
+
+export const WeMakeADiff = [
+  {
+    val: '₹130 cr+',
+    des: 'Brokerage saved monthly'
+  },
+  {
+    val: '30 Lakh+',
+    des: 'Customers Connected Monthly'
+  },
+  {
+    val: '2 Lakh+',
+    des: 'New Listings Monthly'
+  },
+]
+
+export const CoustmerRate = [
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff80818155da4ee20155dd9b3e161113_2016.08.18.11.41.41.jpg",
+    name:"Shubham Raibhandar",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Helps us to find good properties",
+    des:"The site really helps us to find good properties in the least amount of time without any headache of brokerage. I was so scared in Pune due to the issues of high deposit as well as brokerage. I was new and had no time. But then I found NoBroker. It is simply a ..."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff8081815185752901518659f9cc12da.jpg",
+    name:"Lisa Das",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"It's a nice experience",
+    des:"It was a nice experience with Nobroker. They helped me to find a new home to stay as it was difficult for me,as an individual,to find a home with friendly roommates.Thankfully Nobroker helped me to get one with all kind of facilities."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff8081815373f3bb01538493929b5e5f_2016.08.18.11.26.15.jpg",
+    name:"Kishore",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Found Great Place to Stay via NoBroker",
+    des:"NoBroker provides a great place to stay with safe environment. if they show you something about property that is always same as it. No fake pictures."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff80818155ac0fe40155af6ca8df1302_2016.10.06.12.05.00.jpg",
+    name:"Mohamme Kouse",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Good App to Earn Money Online !",
+    des:"I am Mohamed Kouse. The NoBroker app is very useful for home seekers looking for homes to rent. I have also earned money by using the Click & Earn option. I am so happy to use this app because I got a good house for the right amount. I have also earned 21000 i ..."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff8081814dc793fa014dc8d20faf1045_2016.10.06.12.03.04.jpg",
+    name:"Ayan",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Click n Earn is Awesome!",
+    des:"Wow! I am really amazed. Click n Earn is awesome, I really earn by just clicking pictures of To-Let boards. Even many of my friends are also earning by this. The processing of leads is very fast and me and my friends are very happy. This is a great concept."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff8081814c2dea94014c452131543574_2016.08.22.20.01.02.jpg",
+    name:"Prabhu Dev",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Got Genuine and very quick Response",
+    des:"I have got a genuine and very quick response from the site. I am very happy with service of NoBroker.com owner plans."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff8081814d4b859b014d5268806a2734_2016.08.22.18.28.14.jpg",
+    name:"Balasubramanyam K.c.",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Appreciate Positive and quick responses from RM",
+    des:"RMs of NoBroker team, I really would like to appreciate positive and quick responses from you guys . Thank you for excellent service through paid plans of NoBroker.com."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff80818154ce36190154d104805313f0_2016.08.18.18.24.52.jpg",
+    name:"Tiasha",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Best Option",
+    des:"The service was great and very professional. I went with the Relax plan. My RM Sayantan Gupta is really efficient. He noted my requirements quite well and suggested me a list of options. I shortlisted one from them and in just one visit, I was able to finalize ..."
+  },
+  {
+    img:"https://assets.nobroker.in/images/testimonials/ff80818154f7abca0154fb3dd1232277.jpg",
+    name:"Anoop Nair",
+    star:"https://assets.nobroker.in/nb-new/public/star.png",
+    heading:"Excellent Service",
+    des:"Excellent service and an equally involved team. I opted for the Relax plan and got a good deal on my property. Highly recommended app"
+  },
+  
 ]
 
 
@@ -246,4 +338,92 @@ export const legalService = [
     title: "Property Legal ",
   },
 ];
+
+export const Nobrokerserv = [
+  {
+    category: 'Buy',
+    titles: [
+      'Property Legal Services',
+      'Interiors',
+      'Sale Agreement',
+      'NoBroker For NRI\'s',
+      'New Builder Project',
+      'Home Loan EMI Calculator',
+      'Home Loan Balance Transfer',
+      'Home Loan Eligibility Calculator',
+      'Apply Home Loan',
+      'Compare Home Loan Interest',
+      'Property Buyers Forum',
+      'Property Buyers Guide',
+      'Property Seller Guide',
+      'Home Loan Guide',
+      'Home Loan Queries',
+      'Home Renovation Guide',
+      'Home Renovation Queries',
+      'Interior Design Tips',
+      'Interior Design Queries',
+      'NRI RealEstate Guide',
+      'NRI RealEstate Queries',
+      'Realestate Vastu Guide',
+      'Personal Loan Guide',
+      'Personal Loan Queries',
+      'Bill Payment Guide',
+      'Realestate Legal Guide',
+      'Realestate Legal Queries',
+      'e-AASTHI BBMP'
+    ]
+  },
+  {
+    category: 'Rent',
+    titles: [
+      'Rental Agreement',
+      'Pay Rent',
+      'Refer and Earn',
+      'Packers and Movers',
+      'Property Management in India',
+      'Home Services Questions',
+      'Rent Services Questions',
+      'Rent Calculator',
+      'Property Rental Guide',
+      'Landlord Guide',
+      'Tenant Guide',
+      'Packers and Movers Guide',
+      'Packers and Movers queries',
+      'Home Services',
+      'Home Services Queries',
+      'Painting Services',
+      'Home Painting Guide',
+      'Home Painting Queries',
+      'Cleaning Services',
+      'Kitchen Cleaning Services',
+      'Sofa Cleaning Services',
+      'Bathroom Cleaning Services',
+      'Full House Cleaning Services',
+      'Home Cleaning Guide',
+      'Home Cleaning Queries',
+      'AC Services',
+      'Carpentry Services',
+      'Carpentry Services Queries',
+      'Electrician Services',
+      'Electrician Services Queries',
+      'Plumbing Services',
+      'Plumbing Services Queries',
+      'Lease Agreement',
+      'Notary',
+      'Notary Advocate',
+      'Notary Affidavit'
+    ]
+  }
+];
+
+export const NavData = [
+  
+  {
+    header:['Properties & Flats for Sale ', 'Flats for Rent ', 'PG / Hostels ', 'Flatmates ',
+           'Miscellaneous ', 'Commercial ', 'New Projects & Plots ', 'Independent Houses & Villas ' ]
+  },
+
+]
+
+
 

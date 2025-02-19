@@ -15,6 +15,22 @@ import One_stop from "@/app/components/MainPageComponents/MobilComponentMainPage
 import Legal_services from "@/app/components/MainPageComponents/MobilComponentMainPage/Legal_services";
 import Interiors_renovations from "@/app/components/MainPageComponents/MobilComponentMainPage/Interiors_renovations";
 import Packers_rent from "@/app/components/MainPageComponents/MobilComponentMainPage/Packers_rent";
+import NoBrokerBussinessAssistsPlan from "@/app/components/MainPageComponents/NoBrokerBussinessAssistsPlan";
+import WeMakeADifference from "@/app/components/MainPageComponents/WeMakeADifference";
+import CoustmerRating from "@/app/components/MainPageComponents/CoustmerRating";
+import Toolsandinsights from "@/app/components/MainPageComponents/MobilComponentMainPage/Toolsandinsights";
+import NoBrokerForNri from "@/app/components/MainPageComponents/MobilComponentMainPage/NoBrokerForNri";
+import OneStopShopForPayment from "@/app/components/MainPageComponents/MobilComponentMainPage/OneStopShopForPayment";
+import PropertyManagementService from "@/app/components/MainPageComponents/MobilComponentMainPage/PropertyManagementService";
+import FinacialService from "@/app/components/MainPageComponents/MobilComponentMainPage/FinacialService";
+import NbEstimate from "@/app/components/MainPageComponents/MobilComponentMainPage/NbEstimate";
+import RelecationService from "@/app/components/MainPageComponents/MobilComponentMainPage/RelecationService";
+import NeedHelp from "@/app/components/MainPageComponents/MobilComponentMainPage/NeedHelp";
+import FindaNewHome from "@/app/components/FindaNewHome";
+import NoBrokerServics from "@/app/components/MainPageComponents/NoBrokerServics";
+import Headerdata from "@/app/components/MainPageComponents/Headerdata";
+import Footer from "@/app/components/MainPageComponents/Footer";
+import MobileTab from "@/app/components/MainPageComponents/MobilComponentMainPage/MobileTab";
 
 
 
@@ -28,13 +44,13 @@ const Page = () => {
     <div className="flex flex-col md:flex-row ">
       {/* Main Content */}
       <div className="flex-1 ml-0">
-        <div className="flex flex-col justify-center items-center p-4">
+        <div className="flex flex-col justify-center items-center  p-4">
           <div className="w-full max-w-4xl flex flex-col justify-center items-center md:mt-28">
             {/* Header Section */}
             <div>
               {/* Visible on Desktop */}
               <h1 className="text-3xl hidden md:block text-[#787676] text-center">
-                World's Largest No Brokerage Property Site
+                World&apos;s Largest No Brokerage Property Site
               </h1>
 
               {/* Visible on Mobile */}
@@ -206,6 +222,42 @@ const Page = () => {
 
         <Packers_rent/>
 
+        <NoBrokerBussinessAssistsPlan></NoBrokerBussinessAssistsPlan>
+
+        <WeMakeADifference></WeMakeADifference>
+
+        <CoustmerRating></CoustmerRating>
+
+        <FindaNewHome></FindaNewHome>
+
+
+
+        <Toolsandinsights></Toolsandinsights>
+
+        <NoBrokerForNri></NoBrokerForNri>
+
+        <OneStopShopForPayment></OneStopShopForPayment>
+
+        <PropertyManagementService></PropertyManagementService>
+
+        <FinacialService></FinacialService>
+
+        <NbEstimate></NbEstimate>
+
+        <RelecationService></RelecationService>
+
+        <NeedHelp></NeedHelp>
+
+
+        {/* there is a missing part in site which will be start by tomorow  */}
+        <Headerdata></Headerdata>
+        
+        <NoBrokerServics></NoBrokerServics>
+
+        <Footer></Footer>
+
+        <MobileTab></MobileTab>
+        
         {/* <One_stop/> */}
 
        

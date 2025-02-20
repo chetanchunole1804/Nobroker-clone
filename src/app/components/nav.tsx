@@ -32,7 +32,18 @@ const Nav: React.FocusEventHandler = () => {
 
   return (
     <div >
-      <div className="w-full flex md:justify-between bg-white shadow-md  z-30 fixed items-center gap-2 px-5 py-3 nav_box_shadow flex-wrap text-gray-500">
+      <style jsx>{`
+        @keyframes moveText {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
+
+      <div className="w-full flex md:justify-between bg-white shadow-md  z-1 fixed items-center gap-2 px-5 py-5 nav_box_shadow flex-wrap text-gray-500">
         <div
           className="flex md:hidden gap-2 justify-center items-center cursor-pointer"
           
@@ -123,7 +134,7 @@ const Nav: React.FocusEventHandler = () => {
 
         {/* Modified marquee text section - only visible when sidebar is closed */}
         {!isSidebarOpen && (
-          <div className="md:hidden fixed right-0 left-0 top-[33px] flex justify-center z-31 pt-[25px]">
+          <div className="md:hidden fixed right-0 left-0 top-[30px] flex justify-center z-31 pt-[25px]">
             <div
               className="rounded-[35px] shadow-[inset_-9px_-2px_3px_0px_#0000000D] relative w-[75%] flex items-center justify-center h-[32px] border-[1px] border-solid border-[#d4d2c6] px-[8px] bg-white"
             >

@@ -7,11 +7,11 @@ import ContactNo from "./ContactNo";
 import MenuBar from "./MenuBar";
 import SideNav from "./MainPageComponents/MobilComponentMainPage/SideNav";
 
-const Nav = () => {
+const Nav: React.FocusEventHandler = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [menuItem, setMenuItem] = useState(false)
+  const [menuItem, setMenuItem] = useState<boolean>(false);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -27,24 +27,12 @@ const Nav = () => {
   };
 
   const showMenuItem = () => {
-    setMenuItem(!menuItem)
-  }
+    setMenuItem((prev) => !prev);
+  };
 
   return (
-    <div>
-      {/* Add the keyframes for moving text animation */}
-      <style jsx>{`
-        @keyframes moveText {
-          0% {
-            transform: translateX(100%);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-      `}</style>
-
-      <div className="w-full flex md:justify-between bg-white shadow-md z-1 fixed items-center gap-2 px-5 py-5 nav_box_shadow flex-wrap">
+    <div >
+      <div className="w-full flex md:justify-between bg-white shadow-md  z-30 fixed items-center gap-2 px-5 py-3 nav_box_shadow flex-wrap text-gray-500">
         <div
           className="flex md:hidden gap-2 justify-center items-center cursor-pointer"
           
@@ -67,12 +55,12 @@ const Nav = () => {
           />
         </div>
         <div className="hidden md:flex right_nav h-fit text-sm justify-center items-center gap-4">
-          <div className="border rounded-sm flex justify-center items-center h-8 px-2 text-center hover:bg-gray-100">
-            <p>Pay rent</p>
+          <div className="border flex justify-center items-center h-8 px-2 text-center hover:bg-gray-100 rounded-[2px]">
+            <p className="flex items-center gap-2"><img src="https://assets.nobroker.in/nb-new/public/payrent.png" alt="" /><span>| Pay rent</span></p>
           </div>
           <div
             onClick={handleClick}
-            className="rounded-sm text-white bg-[#007A6F] justify-center text-[14px] h-8 items-center flex px-2 hover:bg-[#005f55]"
+            className="rounded-[2px] text-white bg-teal-600 justify-center text-[14px] h-8 items-center flex px-2 hover:bg-[#005f55]"
           >
             For Property owners
           </div>
@@ -118,7 +106,11 @@ const Nav = () => {
             </h1>
           </div>
           <div>
-            <div className="flex gap-1 items-center cursor-pointer" onClick={showMenuItem}>
+            <div
+              className="flex gap-1 items-center cursor-pointer"
+              onClick={showMenuItem}
+              
+            >
               <img
                 src="https://img.icons8.com/?size=50&id=3096&format=png"
                 alt="menu"
@@ -202,7 +194,7 @@ const Nav = () => {
           onClick={toggleSidebar}
         ></div>
       )}
-      {menuItem && <MenuBar/>}
+      {menuItem && <MenuBar />}
     </div>
   );
 };

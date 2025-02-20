@@ -1,4 +1,3 @@
-
 "use client"
 import { divIcon } from "leaflet";
 import Image from "next/image";
@@ -6,6 +5,7 @@ import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import ContactNo from "./ContactNo";
 import MenuBar from "./MenuBar";
+import SideNav from "./MainPageComponents/MobilComponentMainPage/SideNav";
 
 const Nav = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -26,17 +26,30 @@ const Nav = () => {
     setIsFormOpen(!isFormOpen);
   };
 
-  const showMenuItem = ()=>{
-   setMenuItem(!menuItem)
+  const showMenuItem = () => {
+    setMenuItem(!menuItem)
   }
 
   return (
     <div>
-      <div className="w-full flex md:justify-between bg-white shadow-md  z-30 fixed items-center gap-2 px-5 py-3 nav_box_shadow flex-wrap">
+      {/* Add the keyframes for moving text animation */}
+      <style jsx>{`
+        @keyframes moveText {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
+
+      <div className="w-full flex md:justify-between bg-white shadow-md z-1 fixed items-center gap-2 px-5 py-5 nav_box_shadow flex-wrap">
         <div
           className="flex md:hidden gap-2 justify-center items-center cursor-pointer"
-          onClick={toggleSidebar}
+          
         >
+          <div className="bg-black w-[24px] h-[24px] absolute opacity-0 z-10 " onClick={toggleSidebar}></div>
           <Image
             src="https://assets.nobroker.in/nb-new/public/hamburger-menu.svg"
             width={24}
@@ -83,7 +96,7 @@ const Nav = () => {
                   className="border-r pr-2"
                 />
                 <img
-                  src="data:image/png;base64,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"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAANEAAADxCAMAAABiSKLrAAAAeFBMVEX///9JTE5GSUs2Ojzp6elbXV9ER0k6PkA1OTtBREY9QUM6PUA0ODpAQ0Y8P0Kdnp/39/d8fn9vcXPS09Otrq9OUVPg4eHZ2tqHiYry8vKxsrPBwsKPkJFmaGqkpaaBg4TKy8tzdXa8vb1XWVuYmZppa21hY2WMjo+sqyAWAAANvUlEQVR4nO1d6XayOhQtgyBDcao4K1rt9/5veLVCqzsnkIQkYNfdP7us5JDkzMPbmyn4m/1yOpg7iPnn5TA65cbeawjF0vWyKHAZem5wgyjz3ienVderFEZ+jpKIpOURQZYdFl0vVQj5xGsmpyTK2826Xm4jxss0EKTn+wCmU7/rJddjE4nuz+8+7btedB2WQ0l6bggvvWURq0GsQNB1m6Kecog8kLlBj3CHRdeLp5BHtPQRwnDT9fJZ+G0Icpy06JoAxNhpRZDjeH3Tiy6qd6iC64y7puEJo6wlQY4THbsm4hELFTmE8E5dk/GAAXmJ3KuKnXrhM5LUS97pOxf3R9KuQ2J9Qfg5KvwxczvG/my/CillKVp2sXgSxPJcb1KnCPjnkGAlaV/43Qer/MSDJsXGP7IbGxysrLcZrCjytgL/tk4ZksJ+mBYF87G9D7F/9JibNDK8VjFM8EaEohZPgUzfnRtdqSDGuEXRRPh/9/i/Xh/sig2uKpBQZ3ZwBXtx7LbAuzMZ0b+Aq+R+GVunOEBfkLwKR7iEqaFVygB4cCznCJnBmQ27v0g5nBtPUqTAHsXdq6sgjaT5L/D+qHtf1+nZMgrEWfcdoEJFItqGWeCKZNkvMH/pL6If+2fmHYspQL8A1hB0b8mO3msoGufFer89HC+7wWBwuRwP29G6WDwZdkCRO7W7fAI8A1pican89TC+973igan9Kk2+zPD4aEG1ht4X2sWq/JyJ8hhzZ3VBFCTxKJdWoDvx0z1JrmfHxytRKDYHqoUkq7fZJ0uKDtPaPbpTmcZ7QsXoxq7LvUejKrEPH61K0aVOE31V+bSyOoAP/JdvaXqhBV9rnZvXz/6Fwr7y38rKfj+LvllrPlJSBzwVK0YE6q8lxXpLFCUVf4eC7pEiiLTa93vqpA57B+/YoShsjvTcmaxQBQrIQJGiUjAzP5vXomhkGUVtEHnnxnl7zXGDYVsrS1ukKjxKPjKsZtl1iPsbDJu7f0qGW/XzfmdE9Q8JRV7x9TQ+Hw57P89Xg0nsuY/1jcb5Gvd4wZ/Xdj1uCnxMZJHGtbVonz7ZhO5w/nHeX8az9XDpzP383g9pLGGWdGWvvSCwSwUpGsdRPK1yVA2ezkTFi6Vah+f1WyW+wbH7yx6ypnl8xW2O8ZzbPd6aBpk1S9Jt0VXvk1qRDdQYvM/gxlJvk5QlP1rxBTz6pllTKjzC1Lz1aqHtYUjbKrohCtRdcn5V9Vfhb1n+Taz5+RmKuaM8zIumT51XdaP5WpZDiIz7RcdT0lG2GYqyK4iIbZXxUmxRgRZiyjt28rN+bCFRXVD0yy5FrZ2/BVCU5XzMTZ7W6yQpd6eVh4Gr724YoGjHYI5QAA/81U4qDJXGaUJZG0VLDYp6yBMliFGIh6JlbyJ0CxOBorj+LXbY9C8cYQTRHbK1SCEClQGKQvTxXktOYXdj34AiY+e2JYF4FG0UGR5sXRN4+SkqRApw0XQUYOm3qgigKxlLKlm9fWILZjCpNYxpFRTSX2bvBR7NFk/2p2hh6a23HHwsWaLsgsKOdP8hQ5E3sTXr5U/KUZRaTNG9VjBY9EKY9kHDSdEWOCOVFF3rbNDT8CjaMXfIVlOyKLRbE7AxnqLZn6JXvmg2Kcrj2gGGNZYiy6BRNKdXbYQiZHXCOYtMT76UlnlqFLW86X4CKZh9hhcoWUbm3GIb1xZDUTTjUhTUNWh8XYqyxiX5GkAVFGd8DKvlLAEbLvUoio49iejrUeQ1h8m7osjhZ+1LiN7qGzmG67ooKZKtDnF4TY3qMO1QKRDhRp8d2DxFNcZB2wwcHmXPVp+OTSWKhvVxnq5pEo9foCo+mlQZYG0LgU/Rf9RiVeOEPVqMfagG6KE5wLHuMQHxLEVh+/Swr0BRJKFf6r7DYkk6b6LM0hGOXKl4TBlH10TRCZ1Sb1kexJQXXFSgiK8ZUAJv3KJ1h7FQ5PUGJyQewZzTLJEyBh0CKKLVf1qAVV4nAypQdJZgAi+XeL5N5cjR0aGIXmNvyZSvcYJKcZLSOF0RzMWtepUX74EqUPQHFl5mUGEH0Spo/Fx1IrJlQKnIYPKNRulU1KYnqq3REoR5G/I9hF42m2HZRR1bx7z+/+6lQxUswMrZE+7pCfbTLNn3mMBSS/9+E84tNnbUuK8QkJRbldAp8CeZK3A/FKb83/R2JZnnLcTJJ3O0KYpqiDwTvC91uT6m85aKnP24jfbN3RvjhrXrO5Cv9g3N9VRE4BJEZlhQMB39/r5vCJo27rLt/v0w74/i0O1R15qCdcCLAy7f9KGNkCx1K7Pz8GjlnrT0D1RHjIbWJaAy3GKqJZcmNRNsyPBCQA2Kru+kUbZXJVg8zDWlXkSTNAx6ZdgJJiHtgZR68MdRJJQXEjUMXwWzytQmzP3aOxqYFujVPCN3+MxWZDYeAz0afspyVIDcwGgMNFjsI0sRsHdmewVYd5SoPjQ0jPbSY5CG8mNBWYqAf24oYRDC8FQuP5T8ZWmMB4x8SMVX4Aj/bCiFDLzdZt5Wy9CPDEVv4R0TsRpodAyZq79LVmS8A3g7ze4RFnlQqOF+tLvKvKjn5wd8OuUFuK9QA6TjbPdTT6ZvUJY4DxSc9xNJRNjBu21WsJQPUElaqnWUgRMxFBFLHlpCDitWoIjthxZoUMx7CbRe7rYJuOOOSkGxbSMvuGbHE/MMlgLXoLKYbhX+pnJxBIoEjcHgDzg0gY/iCRqzI4keDk8D7R3WkwqAVYJKNXQLsNPeU2lUTjCXGuxSBaxPZZ6tCY4h5nkkP1gArL0UbyZWwTw0uUJTPVAKvfJUHlCc68mV5AEj74xd3cUGjJR6bXPdENWOzCkPsGUJx9N6vqxfaMqvpDzbBbNZW2xq8xd4+qxyRyhd+dFCeMAuRwpyqCNdrgZoW9LlCXZPyeQdgS4mXQBEgVAKUq2PXgfQYOhL6JBdLvw3R0IREyBl9NLrAj6qrXq1AGUDJjLHAeswUj+tARjuVINTzb3jyuA1yIcCPpfUaIB7rRrOb7dEPYYo493YuwB9GxPTOTMgp+Yxdj5Y9yl2jeCsxcgYSLRUkWKTJYDLdLVLn+BB19IcyqFWCTu1kWxBz9f20Bj3JCxZygSwutTNNOxoCxj8bTNDuxrMu2OzTDSgG6oJuLnlKrVawH8a0h/bfYMxC+0GVcDwDhbLmfrgKa4VZhwCRsZMHjzQb38JvhNvEoOaENwizZ6PBB5+bvfmg8XDRkwkv4/vQzuKbtlDk9fnQXyPXm72D+dT9ZFygOufjQVKMoEmecGw/LbBl7PblJCewi72FMuT5/f1RKjDTOyHpK+MJPnL3QOB1caPxnPEkxeW0ht42yOzxiXXBbPJ7zI42kxR4/zGNhSd7vPhDjNlZwWwi8MURf2jgytovzB5tE1RCFuK4hlzI8F0yN0X0SRRZMoiWgFYOxe56fXVAwWKwsXBMkV/W1O0tUDRwSZF2+kXG1lUggVFO+siKHZYG+5aqhQ55yu5kODRHvV2XYqOcD8LIf9Fqq3d1mIBBk1aH1Kf2/Ug0Rm83E+YYGloxRBzxVVeU0fntJekjcxIu5T2UbzKTSUlbZCwEYXD86aq+4/tR8GiYXcF7c3eUyCRonCy11LlPgIp/UXsAGTSS1Ej01IcFwR0nrm64CvlYb9cSaAJrOmjEQ8JGRtKMG9s5XodcFaI/QMo99AY6a7oejBJANsP16XJ5uaD5XoGpZYULxBgRlzwqsEb0zjg0q4BFzlH82ZyZFzpFAXl4JnKE94MSJCR7zQ7GlZMeRyDq00gW9eeAZNUzvT6M+jxbJgW/Dq3/M0f1bxXLrxF9h/EkNPSWdcKuBk05sM7G2K0hbfDrKYr+twYmfLY8vZfnJMOCWuznTIbjlBgYEj40JHzqQdIKsOdPWUMhUY52nzvmDojq2+LQMq5uPZY+xmSCz20L63UfM0o9PUc9DcztZ5Ui3fIc5n01fTI3PbW1nBXANfB/n96XTT3Nw7PVSn3AHdkCi3BQGOonzLpDnlmLR0z50V91RD9A6V4lrOLEbIjLOWZ9TgFGT92Ybn6GZCZcSTPOIIymzPO6MG/yidlEPYqAlqJD3RMNZYZ1gEu/Oc52BNwVbILzh/Uwo809/pMZiF8Cz3E83+f6nDRXAC+BZ/qJ+Gy7vXG8A3gJvDqF3+bN3cE9s683q5eKaDrJecNfq75bFdDXwT356mPmO9BLQNvEn31hl6I8x7Zh72NnmUH3VEa6CfK2j/2PeXSVKXqXbDXgLRNjJKP1+p8T6wCO9jLj5lP2X/xfkAfeTOy9YeD6xnl3jWPPYAa1Cp2u1UYvLrJ1AZ2g5rDY2kJvNurX10v0A/LwxPeRNxm0/hzNwdfOl9DtjPHcC04cZ/MV+vvyff78zTfL+TJblZw+Vd8Lf7OYTqdL6dze1WgfWXw3g4/3+HY6k8O/+T0oNfh7sAAAAASUVORK5CYII="
                   alt=""
                   className="w-6 opacity-60 border-r pr-2"
                 />
@@ -111,11 +124,13 @@ const Nav = () => {
                 alt="menu"
                 className="w-4 h-4"
               />
-              <p >Menu</p>
+              <p>Menu</p>
             </div>
           </div>
         </div>
-        {isSidebarOpen || (
+
+        {/* Modified marquee text section - only visible when sidebar is closed */}
+        {!isSidebarOpen && (
           <div className="md:hidden fixed right-0 left-0 top-[33px] flex justify-center z-31 pt-[25px]">
             <div
               className="rounded-[35px] shadow-[inset_-9px_-2px_3px_0px_#0000000D] relative w-[75%] flex items-center justify-center h-[32px] border-[1px] border-solid border-[#d4d2c6] px-[8px] bg-white"
@@ -132,8 +147,8 @@ const Nav = () => {
                   backgroundSize: "307px",
                 }}
               ></div>
-              {/* 2nd block moving text */}
-              <div className="flex flex-grow-1 h-[100%] overflow-hidden mr-[6px] items-center w-[100%] ">
+              {/* 2nd block moving text - fixed animation */}
+              <div className="flex flex-grow-1 h-[100%] overflow-hidden mr-[6px] items-center w-[100%]">
                 <div
                   className="flex flex-shrink-0 flex-grow-1 h-[40%] relative top-[1px] justify-center items-center"
                   style={{
@@ -142,7 +157,7 @@ const Nav = () => {
                     backgroundSize: "contain",
                     backgroundRepeat: "repeat no-repeat",
                     backgroundPosition: "0px 0px",
-                    animation: "moveText 375s linear infinite",
+                    animation: "moveText 15s linear infinite",
                     width: "105%",
                   }}
                 ></div>
@@ -169,34 +184,15 @@ const Nav = () => {
         )}
       </div>
 
-
       {/* Sidebar */}
       <div
         className={`fixed z-20 top-0 left-0 h-full ${
-          isSidebarOpen ? "w-64 md:w-80" : "w-0"
+          isSidebarOpen ? "w-[80%] h-[100%] md:w-[80%]" : "w-0"
         } bg-white shadow-lg transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out overflow-hidden`}
+        } transition-transform duration-300 ease-in-out overflow-auto`}
       >
-        <div className="flex justify-between items-center px-4 py-3 border-b">
-          <h2 className="text-lg font-semibold">Menu</h2>
-          <button
-            className="text-gray-600 hover:text-black"
-            onClick={toggleSidebar}
-          >
-            ✕
-          </button>
-        </div>
-        <ul className="p-4">
-          <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">Home</li>
-          <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">About</li>
-          <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-            Services
-          </li>
-          <li className="py-2 px-4 hover:bg-gray-100 cursor-pointer">
-            Contact
-          </li>
-        </ul>
+        <SideNav></SideNav>
       </div>
 
       {/* Backdrop */}

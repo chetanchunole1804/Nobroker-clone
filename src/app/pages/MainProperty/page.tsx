@@ -44,7 +44,7 @@ const Page = () => {
     <div className="flex flex-col md:flex-row ">
       {/* Main Content */}
       <div className="flex-1 ml-0">
-        <div className="flex flex-col justify-center items-center  p-4">
+        <div className="flex flex-col justify-center items-center  p-4 mt-20">
           <div className="w-full max-w-4xl flex flex-col justify-center items-center md:mt-28">
             {/* Header Section */}
             <div>

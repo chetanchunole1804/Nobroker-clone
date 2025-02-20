@@ -32,7 +32,7 @@ const Headerdata: React.FC = () => {
         <div className="flex w-max md:w-full flex-wrap gap-4">
           {AllData[activeTab]?.body && Object.keys(AllData[activeTab].body).length > 0 ? (
             Object.entries(AllData[activeTab].body).map(([city, categories]) => (
-              <div key={city} className="p-3 min-w-[235px] md:w-auto">
+              <div key={city} className="p-3 min-w-[300px] md:w-auto">
                 <div className="content">
                   {Object.keys(categories).length > 0 ? (
                     Object.entries(categories as Record<string, string[]>).map(([category, properties]) => (

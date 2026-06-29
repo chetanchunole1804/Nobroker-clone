@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, Suspense } from "react";
+import dynamic from "next/dynamic";
 import localityData from "../AddPropertyData.json";
-import Map from "../Map";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import { LatLngExpression, LatLng, divIcon } from "leaflet";
-import SaveContinueButton from "../SaveContinueButton";
+import { LatLngExpression } from "leaflet";
 import HelpInterest from "../HelpInterest";
+
+// Dynamically import Map component with SSR disabled
+const Map = dynamic(() => import("../Map"), { ssr: false });
 
 interface Option {
   [key: string]: string | number;

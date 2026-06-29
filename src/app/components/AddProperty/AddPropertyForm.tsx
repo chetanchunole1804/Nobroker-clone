@@ -1,16 +1,22 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import ProgressBar from "../AddProperty/ProgressBar";
 import InfoCards from "./InfoCards";
 import Sidebar from "./Sidebar";
 import PropertyDetails from "./AddPropertyForms/PropertyDetails";
-import LocalityDetails from "./AddPropertyForms/LocalityDetails";
 import RentalDetails from "./AddPropertyForms/RentalDetails";
 import Amenities from "./AddPropertyForms/Amenities";
 import Gallery from "./AddPropertyForms/Gallery";
 import Schedule from "./AddPropertyForms/Schedule";
 import SaveContinueButton from "./SaveContinueButton";
+
+// Dynamically import components that use leaflet with SSR disabled
+const LocalityDetails = dynamic(
+  () => import("./AddPropertyForms/LocalityDetails"),
+  { ssr: false }
+);
 
 const PropertyDetailsForm: React.FC = () => {
   const [activePage, setActivePage] = useState<string>("PropertyDetails");

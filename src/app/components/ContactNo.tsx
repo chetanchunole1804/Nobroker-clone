@@ -111,7 +111,7 @@ const ContactNo = ({ handleClose }: any) => {
   };
 
   return (
-    <div className="bg-black/50 w-screen h-screen flex justify-center items-center z-[10000] absolute top-0 left-0">
+    <div className="bg-black/50 w-screen h-screen flex justify-center items-center absolute top-0 left-0 ">
       <div className="w-[50%] h-[90%] flex bg-white relative">
         <span
           className=" absolute top-4 right-4 text-lg font-semibold cursor-pointer"

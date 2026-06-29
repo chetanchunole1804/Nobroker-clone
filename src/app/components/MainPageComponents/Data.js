@@ -258,8 +258,8 @@ export const serviceBuy_2 =[
 
 
  export const serviceBuy_1 = [
-  { img: New_builderss, name: "New_builderss" },
-  { img: Home_Interior, name: "Home_Interior" }
+  { img: New_builderss, name: "New_builderss", bgColor: "bg-pink-100" },
+  { img: Home_Interior, name: "Home_Interior", bgColor: "bg-blue-100" }
 ];
 
 

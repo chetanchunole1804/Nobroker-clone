@@ -7,7 +7,7 @@ import ContactNo from "./ContactNo";
 import MenuBar from "./MenuBar";
 import SideNav from "./MainPageComponents/MobilComponentMainPage/SideNav";
 
-const Nav: React.FocusEventHandler = () => {
+const Nav = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [user, setUser] = useState();
   const [isFormOpen, setIsFormOpen] = useState(false);

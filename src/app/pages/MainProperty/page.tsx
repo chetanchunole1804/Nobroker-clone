@@ -82,7 +82,7 @@ const Page = () => {
 
             {/* Search Section */}
             <div className="search text-xl flex flex-col justify-center w-full items-center mt-6">
-              <div className="flex w-full justify-center md:p-0 md:w-[50%]  ">
+              <div className="flex w-full justify-center md:p-0 md:w-[50%]">
                 {options.map((item) => (
                   <div
                     key={item}
